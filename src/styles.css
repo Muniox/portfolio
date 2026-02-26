@@ -385,11 +385,10 @@ section {
 
 .hero__name .line-2 {
     display: block;
-    background: linear-gradient(135deg, var(--text-secondary) 0%, var(--accent-mint) 100%);
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-mint) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    opacity: 0.55;
 }
 
 .hero__subtitle {
@@ -1132,7 +1131,6 @@ section {
 
     .hero { min-height: calc(100vh - env(safe-area-inset-bottom, 0px)); min-height: 100svh; }
     .hero__name { font-size: clamp(2.5rem, 12vw, 4rem); }
-    .hero__name .line-2 { opacity: 0.5; }
     .hero__cta-row {
         flex-direction: column;
         align-items: stretch;
