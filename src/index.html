@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fullstack .NET & Angular Developer — building scalable, modern web applications from database to UI.">
+    <meta name="theme-color" content="#06060c">
+    <title>MK | Fullstack .NET &amp; Angular Developer</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect rx='20' width='100' height='100' fill='%23ff3a5c'/%3E%3Ctext x='50' y='68' font-size='55' font-family='serif' font-weight='bold' fill='white' text-anchor='middle'%3EMK%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Fira+Code:wght@400;500&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Noise texture -->
+    <svg class="noise" aria-hidden="true" style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999;opacity:0.03">
+        <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+            <feColorMatrix type="saturate" values="0"/>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+    </svg>
+
+    <!-- ======== NAVIGATION ======== -->
+    <nav class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">MK<span class="dot">.</span></a>
+            <div class="nav__links" id="navLinks">
+                <a href="#about" class="nav__link">About</a>
+                <a href="#stack" class="nav__link">Stack</a>
+                <a href="#projects" class="nav__link">Projects</a>
+                <a href="#contact" class="nav__link">Contact</a>
+            </div>
+            <button class="nav__burger" id="navBurger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ======== HERO ======== -->
+    <section class="hero" id="hero">
+        <div class="hero__bg">
+            <div class="hero__dots"></div>
+            <div class="hero__orb hero__orb--coral"></div>
+            <div class="hero__orb hero__orb--mint"></div>
+        </div>
+
+        <div class="hero__content">
+            <div class="hero__badge anim-hero" style="--delay:0.3s">
+                <span class="hero__badge-dot"></span>
+                Available for projects
+            </div>
+
+            <h1 class="hero__title">
+                <span class="hero__name anim-hero" style="--delay:0.5s">Mateusz</span>
+                <span class="hero__surname anim-hero" style="--delay:0.7s">Kowalski</span>
+            </h1>
+
+            <p class="hero__sub anim-hero" style="--delay:0.9s">
+                Fullstack <span class="text-coral">.NET</span> &amp; <span class="text-mint">Angular</span> Developer
+            </p>
+
+            <div class="hero__terminal anim-hero" style="--delay:1.1s">
+                <span class="hero__prompt">~$</span>
+                <span class="hero__typed" id="heroTyped"></span><span class="hero__cursor"></span>
+            </div>
+
+            <div class="hero__actions anim-hero" style="--delay:1.3s">
+                <a href="#projects" class="btn btn--primary">
+                    <span>View Projects</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+            </div>
+        </div>
+
+        <div class="hero__scroll anim-hero" style="--delay:1.8s">
+            <span>scroll</span>
+            <div class="hero__scroll-track"><div class="hero__scroll-thumb"></div></div>
+        </div>
+    </section>
+
+    <!-- ======== ABOUT ======== -->
+    <section class="about section" id="about">
+        <div class="container">
+            <header class="section__header reveal">
+                <span class="section__num">01</span>
+                <h2 class="section__title">About Me</h2>
+                <div class="section__line"></div>
+            </header>
+
+            <div class="about__grid">
+                <div class="about__text reveal" style="--reveal-delay:0.1s">
+                    <p class="about__lead">
+                        I'm a fullstack developer specializing in the <strong>.NET</strong> ecosystem and
+                        <strong>Angular</strong> framework. I build performant, scalable web applications
+                        from database to user interface.
+                    </p>
+                    <p>
+                        With expertise spanning C#, ASP.NET Core, Entity Framework, TypeScript, and modern Angular,
+                        I deliver end-to-end solutions that are clean, maintainable, and built to last.
+                        I'm passionate about clean architecture, design patterns, and writing code that
+                        other developers enjoy working with.
+                    </p>
+                    <div class="about__stats">
+                        <div class="stat">
+                            <span class="stat__val">5+</span>
+                            <span class="stat__label">Years of<br>Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__val">30+</span>
+                            <span class="stat__label">Projects<br>Delivered</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__val">15+</span>
+                            <span class="stat__label">Technologies<br>Mastered</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about__editor reveal" style="--reveal-delay:0.25s">
+                    <div class="editor">
+                        <div class="editor__bar">
+                            <div class="editor__dots"><span></span><span></span><span></span></div>
+                            <span class="editor__tab">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
+                                Developer.cs
+                            </span>
+                        </div>
+                        <div class="editor__body">
+<pre><code><s class="ln"> 1</s>  <s class="kw">public class</s> <s class="tp">Developer</s>
+<s class="ln"> 2</s>  {
+<s class="ln"> 3</s>      <s class="kw">public</s> <s class="tp">string</s> Name =&gt; <s class="st">"Mateusz Kowalski"</s>;
+<s class="ln"> 4</s>      <s class="kw">public</s> <s class="tp">string</s> Role =&gt; <s class="st">"Fullstack Dev"</s>;
+<s class="ln"> 5</s>
+<s class="ln"> 6</s>      <s class="kw">public</s> <s class="tp">string[]</s> Stack =&gt; [
+<s class="ln"> 7</s>          <s class="st">".NET"</s>, <s class="st">"Angular"</s>,
+<s class="ln"> 8</s>          <s class="st">"C#"</s>, <s class="st">"TypeScript"</s>
+<s class="ln"> 9</s>      ];
+<s class="ln">10</s>
+<s class="ln">11</s>      <s class="kw">public async</s> Task&lt;<s class="tp">Solution</s>&gt; <s class="fn">Solve</s>(
+<s class="ln">12</s>          <s class="tp">Problem</s> problem)
+<s class="ln">13</s>      {
+<s class="ln">14</s>          <s class="cm">// Clean code, solid arch</s>
+<s class="ln">15</s>          <s class="kw">var</s> plan = <s class="kw">await</s> Analyze(problem);
+<s class="ln">16</s>          <s class="kw">return await</s> Build(plan);
+<s class="ln">17</s>      }
+<s class="ln">18</s>  }</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== TECH STACK ======== -->
+    <section class="stack section" id="stack">
+        <div class="container">
+            <header class="section__header reveal">
+                <span class="section__num">02</span>
+                <h2 class="section__title">Tech Stack</h2>
+                <div class="section__line"></div>
+            </header>
+
+            <div class="stack__bento">
+                <!-- .NET — featured -->
+                <div class="bento bento--featured bento--dotnet reveal" style="--reveal-delay:0.05s">
+                    <div class="bento__accent"></div>
+                    <span class="bento__label">.NET Ecosystem</span>
+                    <h3 class="bento__name">.NET</h3>
+                    <ul class="bento__tags">
+                        <li>ASP.NET Core</li>
+                        <li>Entity Framework</li>
+                        <li>SignalR</li>
+                        <li>Blazor</li>
+                        <li>LINQ</li>
+                        <li>REST API</li>
+                    </ul>
+                </div>
+
+                <!-- Small cards row 1 -->
+                <div class="bento reveal" style="--reveal-delay:0.1s" data-color="coral">
+                    <span class="bento__icon">C#</span>
+                    <span class="bento__sm-label">Language</span>
+                </div>
+                <div class="bento reveal" style="--reveal-delay:0.15s" data-color="blue">
+                    <span class="bento__icon">TS</span>
+                    <span class="bento__sm-label">TypeScript</span>
+                </div>
+
+                <!-- Small cards row 2 -->
+                <div class="bento reveal" style="--reveal-delay:0.2s" data-color="amber">
+                    <span class="bento__icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+                    </span>
+                    <span class="bento__sm-label">SQL Server</span>
+                </div>
+                <div class="bento reveal" style="--reveal-delay:0.25s" data-color="blue">
+                    <span class="bento__icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                    </span>
+                    <span class="bento__sm-label">Azure</span>
+                </div>
+
+                <!-- Angular — featured -->
+                <div class="bento bento--featured bento--angular reveal" style="--reveal-delay:0.1s">
+                    <div class="bento__accent"></div>
+                    <span class="bento__label">Frontend Framework</span>
+                    <h3 class="bento__name">Angular</h3>
+                    <ul class="bento__tags">
+                        <li>Components</li>
+                        <li>Services</li>
+                        <li>RxJS</li>
+                        <li>NgRx</li>
+                        <li>Angular Material</li>
+                        <li>Signals</li>
+                    </ul>
+                </div>
+
+                <!-- Small cards row 3 -->
+                <div class="bento reveal" style="--reveal-delay:0.3s" data-color="blue">
+                    <span class="bento__icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M17 12h.01"/><path d="M7 12h.01"/></svg>
+                    </span>
+                    <span class="bento__sm-label">Docker</span>
+                </div>
+                <div class="bento reveal" style="--reveal-delay:0.35s" data-color="mint">
+                    <span class="bento__icon">Rx</span>
+                    <span class="bento__sm-label">RxJS</span>
+                </div>
+
+                <!-- Small cards row 4 -->
+                <div class="bento reveal" style="--reveal-delay:0.4s" data-color="coral">
+                    <span class="bento__icon">EF</span>
+                    <span class="bento__sm-label">Entity Framework</span>
+                </div>
+                <div class="bento reveal" style="--reveal-delay:0.45s" data-color="amber">
+                    <span class="bento__icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><path d="M11 18H8a2 2 0 0 1-2-2V9"/></svg>
+                    </span>
+                    <span class="bento__sm-label">Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== PROJECTS ======== -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <header class="section__header reveal">
+                <span class="section__num">03</span>
+                <h2 class="section__title">Projects</h2>
+                <div class="section__line"></div>
+            </header>
+
+            <div class="projects__grid">
+                <!-- Project 1 -->
+                <article class="project reveal" style="--reveal-delay:0.05s">
+                    <div class="project__preview project__preview--coral">
+                        <div class="project__preview-content">
+                            <span class="project__preview-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project__body">
+                        <h3 class="project__title">CloudStore</h3>
+                        <p class="project__desc">
+                            Full-featured e-commerce platform with product management, cart system,
+                            payment integration, and admin dashboard. RESTful API with JWT authentication.
+                        </p>
+                        <div class="project__tags">
+                            <span>ASP.NET Core</span>
+                            <span>Angular</span>
+                            <span>SQL Server</span>
+                            <span>Stripe</span>
+                        </div>
+                        <div class="project__links">
+                            <a href="#" class="project__link" aria-label="View source code">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                                Code
+                            </a>
+                            <a href="#" class="project__link" aria-label="View live demo">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Live
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project reveal" style="--reveal-delay:0.15s">
+                    <div class="project__preview project__preview--mint">
+                        <div class="project__preview-content">
+                            <span class="project__preview-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project__body">
+                        <h3 class="project__title">TaskFlow</h3>
+                        <p class="project__desc">
+                            Real-time collaborative task management application with live updates,
+                            drag-and-drop boards, team workspaces, and notification system.
+                        </p>
+                        <div class="project__tags">
+                            <span>.NET 8</span>
+                            <span>SignalR</span>
+                            <span>Angular</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="project__links">
+                            <a href="#" class="project__link" aria-label="View source code">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                                Code
+                            </a>
+                            <a href="#" class="project__link" aria-label="View live demo">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Live
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project reveal" style="--reveal-delay:0.25s">
+                    <div class="project__preview project__preview--amber">
+                        <div class="project__preview-content">
+                            <span class="project__preview-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project__body">
+                        <h3 class="project__title">DataPulse</h3>
+                        <p class="project__desc">
+                            Analytics dashboard for monitoring business KPIs with interactive charts,
+                            data export, role-based access control, and scheduled reports.
+                        </p>
+                        <div class="project__tags">
+                            <span>ASP.NET Core</span>
+                            <span>Angular</span>
+                            <span>Chart.js</span>
+                            <span>Redis</span>
+                        </div>
+                        <div class="project__links">
+                            <a href="#" class="project__link" aria-label="View source code">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                                Code
+                            </a>
+                            <a href="#" class="project__link" aria-label="View live demo">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Live
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project reveal" style="--reveal-delay:0.35s">
+                    <div class="project__preview project__preview--blue">
+                        <div class="project__preview-content">
+                            <span class="project__preview-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project__body">
+                        <h3 class="project__title">DevOps Portal</h3>
+                        <p class="project__desc">
+                            Internal tool for managing CI/CD pipelines, deployment monitoring,
+                            environment configuration, and team access control across Azure services.
+                        </p>
+                        <div class="project__tags">
+                            <span>.NET 8</span>
+                            <span>Blazor</span>
+                            <span>Azure Functions</span>
+                            <span>Docker</span>
+                        </div>
+                        <div class="project__links">
+                            <a href="#" class="project__link" aria-label="View source code">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                                Code
+                            </a>
+                            <a href="#" class="project__link" aria-label="View live demo">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Live
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== CONTACT ======== -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <header class="section__header reveal">
+                <span class="section__num">04</span>
+                <h2 class="section__title">Get in Touch</h2>
+                <div class="section__line"></div>
+            </header>
+
+            <div class="contact__content reveal" style="--reveal-delay:0.1s">
+                <p class="contact__text">
+                    Have a project in mind or want to discuss potential collaboration?
+                    I'm always open to new opportunities and interesting challenges.
+                </p>
+                <a href="mailto:hello@mkowalski.dev" class="contact__email">hello@mkowalski.dev</a>
+                <div class="contact__socials">
+                    <a href="https://github.com" class="contact__social" aria-label="GitHub" target="_blank" rel="noopener">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                    </a>
+                    <a href="https://linkedin.com" class="contact__social" aria-label="LinkedIn" target="_blank" rel="noopener">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://twitter.com" class="contact__social" aria-label="X / Twitter" target="_blank" rel="noopener">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <span class="footer__copy">&copy; 2026 Mateusz Kowalski</span>
+            <span class="footer__built">Built with passion &amp; clean code</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
