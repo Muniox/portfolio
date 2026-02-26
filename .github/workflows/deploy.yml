@@ -21,13 +21,13 @@ jobs:
       - name: Zbudowanie i wysłanie obrazu
         uses: docker/build-push-action@v4
         with:
-          context: .  # Szukamy Dockerfile w głównym katalogu
+          context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
 
   # --- ZADANIE 2: Wdrożenie na VPS ---
   deploy:
-    needs: build-and-push # Czekaj, aż obraz się zbuduje
+    needs: build-and-push
     runs-on: ubuntu-latest
     
     steps:
@@ -41,19 +41,17 @@ jobs:
             # 1. Pobierz najnowszą wersję obrazu
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
             
-            # 2. Zatrzymaj i usuń stary kontener (|| true zapobiega błędom, gdy kontener nie istnieje)
+            # 2. Zatrzymaj i usuń stary kontener
             docker stop portfolio-container || true
             docker rm portfolio-container || true
             
-            # 3. Uruchom nowy kontener
-            # -d: tryb w tle (detached)
-            # -p 3000:80: mapujemy port 3000 serwera na port 80 wewnątrz kontenera (dla Nginx Proxy Managera)
-            # --restart unless-stopped: kontener wstanie sam po restarcie VPS
+            # 3. Uruchom nowy kontener w sieci public_net
+            # Usunięto "-p 3000:80" - NPM połączy się wewnętrznie
             docker run -d \
-              -p 3000:80 \
+              --network public_net \
               --name portfolio-container \
               --restart unless-stopped \
               ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
             
-            # 4. Posprzątaj stare, nieużywane obrazy (oszczędność miejsca)
+            # 4. Posprzątaj stare obrazy
             docker image prune -f
