@@ -385,6 +385,9 @@ section {
 
 .hero__name .line-2 {
     display: block;
+}
+
+.hero__name .line-2 .char {
     background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-mint) 100%);
     -webkit-background-clip: text;
     background-clip: text;
