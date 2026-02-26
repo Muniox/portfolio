@@ -6,6 +6,7 @@ on:
 
 jobs:
   # --- ZADANIE 1: Budowanie i wysyłanie do Docker Hub ---
+  # (Ta część pozostaje bez zmian, bo nadal musimy zbudować obraz)
   build-and-push:
     runs-on: ubuntu-latest
     steps:
@@ -25,33 +26,13 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
 
-  # --- ZADANIE 2: Wdrożenie na VPS ---
+  # --- ZADANIE 2: Wdrożenie przez Portainer Webhook ---
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
     
     steps:
-      - name: Logowanie przez SSH i aktualizacja kontenera
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          script: |
-            # 1. Pobierz najnowszą wersję obrazu
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
-            
-            # 2. Zatrzymaj i usuń stary kontener
-            docker stop portfolio-container || true
-            docker rm portfolio-container || true
-            
-            # 3. Uruchom nowy kontener w sieci public_net
-            # Usunięto "-p 3000:80" - NPM połączy się wewnętrznie
-            docker run -d \
-              --network public_net \
-              --name portfolio-container \
-              --restart unless-stopped \
-              ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
-            
-            # 4. Posprzątaj stare obrazy
-            docker image prune -f
+      - name: Trigger Portainer Webhook
+        # To jest jedyna komenda potrzebna do wdrożenia
+        # Portainer sam pobierze nowy obraz i zrestartuje kontener
+        run: curl -X POST "${{ secrets.PORTAINER_WEBHOOK }}"
