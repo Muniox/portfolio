@@ -1,536 +1,713 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paweł Bartoszewski — Fullstack .NET & Angular Developer</title>
-    <meta name="description" content="Portfolio Pawła Bartoszewskiego — Fullstack Developer specjalizujący się w .NET, Angular, C#, TypeScript, Azure i nowoczesnych technologiach webowych.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paweł Bartoszewski · Fullstack Developer</title>
+  <meta name="description" content="Fullstack Developer specjalizujący się w Angular i .NET. Portfolio projektów, doświadczenie i umiejętności.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Questrial&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Isometric Grid Overlay -->
+  <div class="iso-grid-bg" aria-hidden="true"></div>
 
-    <!-- Noise texture overlay -->
-    <div class="noise" aria-hidden="true"></div>
+  <!-- Floating isometric decorations -->
+  <div class="iso-decorations" aria-hidden="true">
+    <div class="iso-float iso-float--1"></div>
+    <div class="iso-float iso-float--2"></div>
+    <div class="iso-float iso-float--3"></div>
+    <div class="iso-float iso-float--4"></div>
+    <div class="iso-float iso-float--5"></div>
+  </div>
 
-    <!-- Custom cursor -->
-    <div class="cursor" aria-hidden="true">
-        <div class="cursor__dot"></div>
-        <div class="cursor__ring"></div>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__brand">
+      <span class="nav__logo">PB</span>
+    </div>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#about" class="nav__link">O mnie</a></li>
+      <li><a href="#stack" class="nav__link">Stack</a></li>
+      <li><a href="#projects" class="nav__link">Projekty</a></li>
+      <li><a href="#experience" class="nav__link">Doświadczenie</a></li>
+      <li><a href="#contact" class="nav__link nav__link--accent">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero__content">
+      <div class="hero__text">
+        <p class="hero__greeting reveal" data-delay="0">Cześć, jestem</p>
+        <h1 class="hero__name reveal" data-delay="1">
+          <span class="hero__name-first">Paweł</span>
+          <span class="hero__name-last">Bartoszewski</span>
+        </h1>
+        <p class="hero__title reveal" data-delay="2">
+          <span class="hero__title-line"></span>
+          Fullstack Developer
+        </p>
+        <p class="hero__subtitle reveal" data-delay="3">
+          Buduję skalowalne aplikacje webowe z&nbsp;<strong>Angular</strong> na froncie
+          i&nbsp;<strong>.NET</strong> na backendzie. Łączę estetykę interfejsu z&nbsp;solidną architekturą serwera.
+        </p>
+        <div class="hero__actions reveal" data-delay="4">
+          <a href="#projects" class="btn btn--primary">
+            <span class="btn__iso-cube" aria-hidden="true"></span>
+            Moje projekty
+          </a>
+          <a href="#contact" class="btn btn--outline">Napisz do mnie</a>
+        </div>
+      </div>
+
+      <!-- Isometric hero illustration -->
+      <div class="hero__iso reveal" data-delay="2">
+        <div class="iso-scene">
+          <!-- Bottom layer - Database -->
+          <div class="iso-block iso-block--db" data-label="SQL">
+            <div class="iso-face iso-face--top"></div>
+            <div class="iso-face iso-face--left"></div>
+            <div class="iso-face iso-face--right"></div>
+            <span class="iso-block__label">DB</span>
+          </div>
+          <!-- Middle layer - .NET Backend -->
+          <div class="iso-block iso-block--backend" data-label=".NET">
+            <div class="iso-face iso-face--top"></div>
+            <div class="iso-face iso-face--left"></div>
+            <div class="iso-face iso-face--right"></div>
+            <span class="iso-block__label">.NET</span>
+          </div>
+          <!-- Top layer - Angular Frontend -->
+          <div class="iso-block iso-block--frontend" data-label="Angular">
+            <div class="iso-face iso-face--top"></div>
+            <div class="iso-face iso-face--left"></div>
+            <div class="iso-face iso-face--right"></div>
+            <span class="iso-block__label">NG</span>
+          </div>
+          <!-- Small orbiting cubes -->
+          <div class="iso-block iso-block--mini iso-block--mini-1">
+            <div class="iso-face iso-face--top"></div>
+            <div class="iso-face iso-face--left"></div>
+            <div class="iso-face iso-face--right"></div>
+          </div>
+          <div class="iso-block iso-block--mini iso-block--mini-2">
+            <div class="iso-face iso-face--top"></div>
+            <div class="iso-face iso-face--left"></div>
+            <div class="iso-face iso-face--right"></div>
+          </div>
+          <div class="iso-block iso-block--mini iso-block--mini-3">
+            <div class="iso-face iso-face--top"></div>
+            <div class="iso-face iso-face--left"></div>
+            <div class="iso-face iso-face--right"></div>
+          </div>
+          <!-- Connection lines -->
+          <svg class="iso-connectors" viewBox="0 0 400 500" fill="none" aria-hidden="true">
+            <path d="M200 420 L200 300" stroke="var(--accent-primary)" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"/>
+            <path d="M200 280 L200 180" stroke="var(--accent-secondary)" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"/>
+            <path d="M200 160 L200 80" stroke="var(--accent-tertiary)" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
     </div>
 
-    <!-- ════════════ NAVIGATION ════════════ -->
-    <nav class="nav" role="navigation">
-        <a href="#hero" class="nav__logo" aria-label="Strona główna">PB</a>
-        <div class="nav__links">
-            <a href="#about" class="nav__link">O mnie</a>
-            <a href="#skills" class="nav__link">Stack</a>
-            <a href="#projects" class="nav__link">Projekty</a>
-            <a href="#experience" class="nav__link">Kariera</a>
-            <a href="#contact" class="nav__link nav__link--cta">Kontakt</a>
-        </div>
-        <button class="nav__hamburger" aria-label="Menu nawigacyjne">
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-
-    <!-- Mobile overlay nav -->
-    <div class="mobile-nav" aria-hidden="true">
-        <div class="mobile-nav__inner">
-            <a href="#about" class="mobile-nav__link">O mnie</a>
-            <a href="#skills" class="mobile-nav__link">Stack</a>
-            <a href="#projects" class="mobile-nav__link">Projekty</a>
-            <a href="#experience" class="mobile-nav__link">Kariera</a>
-            <a href="#contact" class="mobile-nav__link">Kontakt</a>
-        </div>
+    <!-- Scroll indicator -->
+    <div class="hero__scroll reveal" data-delay="5">
+      <div class="hero__scroll-line"></div>
+      <span>scroll</span>
     </div>
+  </section>
 
-    <!-- ════════════ HERO ════════════ -->
-    <section class="hero" id="hero">
-        <div class="hero__bg" aria-hidden="true">
-            <div class="hero__orb hero__orb--1"></div>
-            <div class="hero__orb hero__orb--2"></div>
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section about" id="about">
+    <div class="section__container">
+      <div class="section__header reveal">
+        <span class="section__tag">&lt;o-mnie&gt;</span>
+        <h2 class="section__title">Kim jestem</h2>
+        <div class="section__line"></div>
+      </div>
+      <div class="about__grid">
+        <div class="about__iso-portrait reveal">
+          <div class="iso-portrait">
+            <div class="iso-portrait__screen">
+              <div class="iso-portrait__code">
+                <span class="code-line"><span class="code-kw">public class</span> <span class="code-cls">Developer</span></span>
+                <span class="code-line">{</span>
+                <span class="code-line">&nbsp;&nbsp;<span class="code-kw">string</span> Name => <span class="code-str">"Paweł"</span>;</span>
+                <span class="code-line">&nbsp;&nbsp;<span class="code-kw">string</span> Role => <span class="code-str">"Fullstack"</span>;</span>
+                <span class="code-line">&nbsp;&nbsp;<span class="code-kw">int</span> Experience => <span class="code-num">5</span>;</span>
+                <span class="code-line">}</span>
+              </div>
+            </div>
+            <div class="iso-portrait__base"></div>
+          </div>
+        </div>
+        <div class="about__text">
+          <p class="about__description reveal">
+            Jestem fullstack developerem z&nbsp;pasją do budowania nowoczesnych aplikacji webowych. 
+            Specjalizuję się w&nbsp;ekosystemie <strong>Angular</strong> po stronie frontendu 
+            oraz <strong>.NET / C#</strong> na backendzie.
+          </p>
+          <p class="about__description reveal">
+            Wierzę, że najlepsze oprogramowanie powstaje na styku estetyki i&nbsp;inżynierii. 
+            Tworzę rozwiązania, które są nie tylko funkcjonalne, ale też dobrze zaprojektowane 
+            architektonicznie — skalowalne, testowalne i&nbsp;łatwe w&nbsp;utrzymaniu.
+          </p>
+          <div class="about__stats reveal">
+            <div class="about__stat">
+              <span class="about__stat-number" data-count="5">0</span>
+              <span class="about__stat-label">lat doświadczenia</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-number" data-count="30">0</span>
+              <span class="about__stat-label">zrealizowanych projektów</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-number" data-count="12">0</span>
+              <span class="about__stat-label">technologii w stacku</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TECH STACK ===================== -->
+  <section class="section stack" id="stack">
+    <div class="section__container">
+      <div class="section__header reveal">
+        <span class="section__tag">&lt;tech-stack&gt;</span>
+        <h2 class="section__title">Technologie</h2>
+        <div class="section__line"></div>
+      </div>
+
+      <div class="stack__categories">
+        <!-- Frontend -->
+        <div class="stack__category reveal">
+          <h3 class="stack__category-title">
+            <span class="stack__category-icon stack__category-icon--fe"></span>
+            Frontend
+          </h3>
+          <div class="stack__grid">
+            <div class="stack__item" data-tech="angular">
+              <div class="stack__cube">
+                <div class="stack__cube-top"></div>
+                <div class="stack__cube-left"></div>
+                <div class="stack__cube-right"></div>
+              </div>
+              <span class="stack__label">Angular</span>
+              <span class="stack__level" data-level="95"></span>
+            </div>
+            <div class="stack__item" data-tech="typescript">
+              <div class="stack__cube">
+                <div class="stack__cube-top"></div>
+                <div class="stack__cube-left"></div>
+                <div class="stack__cube-right"></div>
+              </div>
+              <span class="stack__label">TypeScript</span>
+              <span class="stack__level" data-level="90"></span>
+            </div>
+            <div class="stack__item" data-tech="rxjs">
+              <div class="stack__cube">
+                <div class="stack__cube-top"></div>
+                <div class="stack__cube-left"></div>
+                <div class="stack__cube-right"></div>
+              </div>
+              <span class="stack__label">RxJS</span>
+              <span class="stack__level" data-level="85"></span>
+            </div>
+            <div class="stack__item" data-tech="ngrx">
+              <div class="stack__cube">
+                <div class="stack__cube-top"></div>
+                <div class="stack__cube-left"></div>
+                <div class="stack__cube-right"></div>
+              </div>
+              <span class="stack__label">NgRx</span>
+              <span class="stack__level" data-level="80"></span>
+            </div>
+            <div class="stack__item" data-tech="scss">
+              <div class="stack__cube">
+                <div class="stack__cube-top"></div>
+                <div class="stack__cube-left"></div>
+                <div class="stack__cube-right"></div>
+              </div>
+              <span class="stack__label">SCSS</span>
+              <span class="stack__level" data-level="90"></span>
+            </div>
+          </div>
         </div>
 
-        <div class="hero__content">
-            <div class="hero__badge">
-                <span class="hero__badge-dot"></span>
-                Dostępny do współpracy
+        <!-- Backend -->
+        <div class="stack__category reveal">
+          <h3 class="stack__category-title">
+            <span class="stack__category-icon stack__category-icon--be"></span>
+            Backend
+          </h3>
+          <div class="stack__grid">
+            <div class="stack__item" data-tech="dotnet">
+              <div class="stack__cube">
+                <div class="stack__cube-top"></div>
+                <div class="stack__cube-left"></div>
+                <div class="stack__cube-right"></div>
+              </div>
+              <span class="stack__label">.NET / C#</span>
+              <span class="stack__level" data-level="95"></span>
             </div>
-
-            <h1 class="hero__name">
-                <span class="hero__name-line" data-text="Paweł">Paweł</span>
-                <span class="hero__name-line hero__name-line--italic" data-text="Bartoszewski">Bartoszewski</span>
-            </h1>
-
-            <div class="hero__role">
-                <span class="hero__role-line"></span>
-                <span class="hero__role-text">Fullstack Developer</span>
-                <span class="hero__role-line"></span>
+            <div class="stack__item" data-tech="aspnet">
+              <div class="stack__cube">
+                <div class="stack__cube-top"></div>
+                <div class="stack__cube-left"></div>
+                <div class="stack__cube-right"></div>
+              </div>
+              <span class="stack__label">ASP.NET Core</span>
+              <span class="stack__level" data-level="90"></span>
             </div>
+            <div class="stack__item" data-tech="ef">
+              <div class="stack__cube">
+                <div class="stack__cube-top"></div>
+                <div class="stack__cube-left"></div>
+                <div class="stack__cube-right"></div>
+              </div>
+              <span class="stack__label">Entity Framework</span>
+              <span class="stack__level" data-level="85"></span>
+            </div>
+            <div class="stack__item" data-tech="sql">
+              <div class="stack__cube">
+                <div class="stack__cube-top"></div>
+                <div class="stack__cube-left"></div>
+                <div class="stack__cube-right"></div>
+              </div>
+              <span class="stack__label">SQL Server</span>
+              <span class="stack__level" data-level="85"></span>
+            </div>
+            <div class="stack__item" data-tech="rest">
+              <div class="stack__cube">
+                <div class="stack__cube-top"></div>
+                <div class="stack__cube-left"></div>
+                <div class="stack__cube-right"></div>
+              </div>
+              <span class="stack__label">REST API</span>
+              <span class="stack__level" data-level="95"></span>
+            </div>
+          </div>
+        </div>
 
-            <p class="hero__stack">
-                <span class="hero__stack-item">.NET</span>
-                <span class="hero__stack-sep"></span>
-                <span class="hero__stack-item">Angular</span>
-                <span class="hero__stack-sep"></span>
-                <span class="hero__stack-item">C#</span>
-                <span class="hero__stack-sep"></span>
-                <span class="hero__stack-item">TypeScript</span>
+        <!-- DevOps & Tools -->
+        <div class="stack__category reveal">
+          <h3 class="stack__category-title">
+            <span class="stack__category-icon stack__category-icon--ops"></span>
+            DevOps &amp; Narzędzia
+          </h3>
+          <div class="stack__grid">
+            <div class="stack__item" data-tech="docker">
+              <div class="stack__cube">
+                <div class="stack__cube-top"></div>
+                <div class="stack__cube-left"></div>
+                <div class="stack__cube-right"></div>
+              </div>
+              <span class="stack__label">Docker</span>
+              <span class="stack__level" data-level="75"></span>
+            </div>
+            <div class="stack__item" data-tech="azure">
+              <div class="stack__cube">
+                <div class="stack__cube-top"></div>
+                <div class="stack__cube-left"></div>
+                <div class="stack__cube-right"></div>
+              </div>
+              <span class="stack__label">Azure</span>
+              <span class="stack__level" data-level="80"></span>
+            </div>
+            <div class="stack__item" data-tech="git">
+              <div class="stack__cube">
+                <div class="stack__cube-top"></div>
+                <div class="stack__cube-left"></div>
+                <div class="stack__cube-right"></div>
+              </div>
+              <span class="stack__label">Git</span>
+              <span class="stack__level" data-level="90"></span>
+            </div>
+            <div class="stack__item" data-tech="ci">
+              <div class="stack__cube">
+                <div class="stack__cube-top"></div>
+                <div class="stack__cube-left"></div>
+                <div class="stack__cube-right"></div>
+              </div>
+              <span class="stack__label">CI/CD</span>
+              <span class="stack__level" data-level="80"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="section projects" id="projects">
+    <div class="section__container">
+      <div class="section__header reveal">
+        <span class="section__tag">&lt;projekty&gt;</span>
+        <h2 class="section__title">Wybrane projekty</h2>
+        <div class="section__line"></div>
+      </div>
+
+      <div class="projects__grid">
+        <!-- Project 1 -->
+        <article class="project reveal">
+          <div class="project__iso-frame">
+            <div class="project__screen">
+              <div class="project__screen-header">
+                <span class="project__dot project__dot--red"></span>
+                <span class="project__dot project__dot--yellow"></span>
+                <span class="project__dot project__dot--green"></span>
+              </div>
+              <div class="project__screen-body">
+                <div class="project__mockup project__mockup--dashboard">
+                  <div class="mockup__sidebar"></div>
+                  <div class="mockup__content">
+                    <div class="mockup__chart"></div>
+                    <div class="mockup__cards">
+                      <div class="mockup__card"></div>
+                      <div class="mockup__card"></div>
+                      <div class="mockup__card"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project__info">
+            <div class="project__tags">
+              <span class="project__tag project__tag--angular">Angular</span>
+              <span class="project__tag project__tag--dotnet">.NET</span>
+              <span class="project__tag project__tag--sql">SQL</span>
+            </div>
+            <h3 class="project__title">Panel Analityczny</h3>
+            <p class="project__desc">
+              Kompleksowy dashboard do monitoringu KPI z&nbsp;wizualizacją danych w&nbsp;czasie rzeczywistym. 
+              Angular + SignalR + ASP.NET Core Web API.
             </p>
-
-            <div class="hero__actions">
-                <a href="#projects" class="btn btn--primary">
-                    <span>Poznaj projekty</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                </a>
-                <a href="#contact" class="btn btn--ghost">Kontakt</a>
+            <div class="project__links">
+              <a href="#" class="project__link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                Kod
+              </a>
+              <a href="#" class="project__link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
             </div>
-        </div>
+          </div>
+        </article>
 
-        <div class="hero__scroll" aria-hidden="true">
-            <span>Scroll</span>
-            <div class="hero__scroll-track">
-                <div class="hero__scroll-thumb"></div>
+        <!-- Project 2 -->
+        <article class="project reveal">
+          <div class="project__iso-frame">
+            <div class="project__screen">
+              <div class="project__screen-header">
+                <span class="project__dot project__dot--red"></span>
+                <span class="project__dot project__dot--yellow"></span>
+                <span class="project__dot project__dot--green"></span>
+              </div>
+              <div class="project__screen-body">
+                <div class="project__mockup project__mockup--ecommerce">
+                  <div class="mockup__header-bar"></div>
+                  <div class="mockup__products">
+                    <div class="mockup__product"></div>
+                    <div class="mockup__product"></div>
+                    <div class="mockup__product"></div>
+                    <div class="mockup__product"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
+          <div class="project__info">
+            <div class="project__tags">
+              <span class="project__tag project__tag--angular">Angular</span>
+              <span class="project__tag project__tag--dotnet">.NET</span>
+              <span class="project__tag project__tag--azure">Azure</span>
+            </div>
+            <h3 class="project__title">Platforma E-Commerce</h3>
+            <p class="project__desc">
+              Platforma sprzedażowa z&nbsp;systemem rekomendacji, zarządzaniem magazynem 
+              i&nbsp;integracją z&nbsp;bramkami płatności. Mikroserwisy na Azure.
+            </p>
+            <div class="project__links">
+              <a href="#" class="project__link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                Kod
+              </a>
+              <a href="#" class="project__link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </article>
 
-        <div class="hero__meta" aria-hidden="true">
-            <span>52.23° N, 21.01° E</span>
-            <span>© 2026</span>
-        </div>
-    </section>
+        <!-- Project 3 -->
+        <article class="project reveal">
+          <div class="project__iso-frame">
+            <div class="project__screen">
+              <div class="project__screen-header">
+                <span class="project__dot project__dot--red"></span>
+                <span class="project__dot project__dot--yellow"></span>
+                <span class="project__dot project__dot--green"></span>
+              </div>
+              <div class="project__screen-body">
+                <div class="project__mockup project__mockup--chat">
+                  <div class="mockup__chat-sidebar"></div>
+                  <div class="mockup__chat-main">
+                    <div class="mockup__msg mockup__msg--in"></div>
+                    <div class="mockup__msg mockup__msg--out"></div>
+                    <div class="mockup__msg mockup__msg--in"></div>
+                    <div class="mockup__chat-input"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project__info">
+            <div class="project__tags">
+              <span class="project__tag project__tag--angular">Angular</span>
+              <span class="project__tag project__tag--dotnet">.NET</span>
+              <span class="project__tag project__tag--signalr">SignalR</span>
+            </div>
+            <h3 class="project__title">System Komunikacji</h3>
+            <p class="project__desc">
+              Aplikacja do komunikacji zespołowej w&nbsp;czasie rzeczywistym z&nbsp;wideokonferencjami, 
+              kanałami tematycznymi i&nbsp;integracją z&nbsp;kalendarzem.
+            </p>
+            <div class="project__links">
+              <a href="#" class="project__link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                Kod
+              </a>
+              <a href="#" class="project__link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </article>
 
-    <!-- ════════════ MARQUEE ════════════ -->
-    <div class="marquee" aria-hidden="true">
-        <div class="marquee__track">
-            <span class="marquee__item">.NET 8</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">Angular</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">C#</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">TypeScript</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">Azure</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">Docker</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">SQL Server</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">REST API</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">Entity Framework</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">RxJS</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">Microservices</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">CI/CD</span>
-            <span class="marquee__dot"></span>
-            <!-- duplicate for seamless loop -->
-            <span class="marquee__item">.NET 8</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">Angular</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">C#</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">TypeScript</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">Azure</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">Docker</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">SQL Server</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">REST API</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">Entity Framework</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">RxJS</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">Microservices</span>
-            <span class="marquee__dot"></span>
-            <span class="marquee__item">CI/CD</span>
-            <span class="marquee__dot"></span>
-        </div>
+        <!-- Project 4 -->
+        <article class="project reveal">
+          <div class="project__iso-frame">
+            <div class="project__screen">
+              <div class="project__screen-header">
+                <span class="project__dot project__dot--red"></span>
+                <span class="project__dot project__dot--yellow"></span>
+                <span class="project__dot project__dot--green"></span>
+              </div>
+              <div class="project__screen-body">
+                <div class="project__mockup project__mockup--api">
+                  <div class="mockup__endpoint"><span class="mockup__method">GET</span><span class="mockup__path">/api/users</span></div>
+                  <div class="mockup__endpoint"><span class="mockup__method mockup__method--post">POST</span><span class="mockup__path">/api/orders</span></div>
+                  <div class="mockup__endpoint"><span class="mockup__method mockup__method--put">PUT</span><span class="mockup__path">/api/products/{id}</span></div>
+                  <div class="mockup__endpoint"><span class="mockup__method mockup__method--del">DEL</span><span class="mockup__path">/api/sessions/{id}</span></div>
+                  <div class="mockup__json-preview">{<br>&nbsp;&nbsp;"status": 200,<br>&nbsp;&nbsp;"data": [...]<br>}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project__info">
+            <div class="project__tags">
+              <span class="project__tag project__tag--dotnet">.NET</span>
+              <span class="project__tag project__tag--docker">Docker</span>
+              <span class="project__tag project__tag--sql">SQL</span>
+            </div>
+            <h3 class="project__title">API Gateway</h3>
+            <p class="project__desc">
+              Mikroserwisowy gateway API z&nbsp;rate limiting, cache'owaniem, 
+              load balancingiem i&nbsp;centralnym logowaniem. Clean Architecture.
+            </p>
+            <div class="project__links">
+              <a href="#" class="project__link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                Kod
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <!-- ════════════ ABOUT ════════════ -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__number reveal">01</span>
-                <div class="section__line"></div>
-                <span class="section__label reveal">O mnie</span>
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="section experience" id="experience">
+    <div class="section__container">
+      <div class="section__header reveal">
+        <span class="section__tag">&lt;doświadczenie&gt;</span>
+        <h2 class="section__title">Ścieżka kariery</h2>
+        <div class="section__line"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline__line" aria-hidden="true"></div>
+
+        <div class="timeline__item reveal">
+          <div class="timeline__marker">
+            <div class="timeline__cube">
+              <div class="iso-face iso-face--top"></div>
+              <div class="iso-face iso-face--left"></div>
+              <div class="iso-face iso-face--right"></div>
             </div>
-
-            <h2 class="section__title reveal">
-                Budowanie rozwiązań<br><em>od&nbsp;A&nbsp;do&nbsp;Z</em>
-            </h2>
-
-            <div class="about__grid">
-                <div class="about__text">
-                    <p class="reveal">
-                        Jestem <strong>fullstack developerem</strong> specjalizującym się w ekosystemie <strong>.NET</strong> i <strong>Angular</strong>. Tworzę skalowalne aplikacje webowe — od solidnego backendu po dopracowany frontend.
-                    </p>
-                    <p class="reveal">
-                        Wierzę w <strong>czysty kod</strong>, dobrą architekturę i rozwiązania, które naprawdę działają. Łączę wiedzę z obu stron stacka, by dostarczać kompletne, przemyślane produkty — od REST API i mikroserwisów po responsywne interfejsy użytkownika.
-                    </p>
-                </div>
-
-                <div class="about__stats">
-                    <div class="stat-card reveal">
-                        <span class="stat-card__value">5+</span>
-                        <span class="stat-card__label">Lat<br>doświadczenia</span>
-                    </div>
-                    <div class="stat-card reveal">
-                        <span class="stat-card__value">20+</span>
-                        <span class="stat-card__label">Zrealizowanych<br>projektów</span>
-                    </div>
-                    <div class="stat-card reveal">
-                        <span class="stat-card__value">&infin;</span>
-                        <span class="stat-card__label">Pasja<br>do kodu</span>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <div class="timeline__content">
+            <span class="timeline__date">2023 — obecnie</span>
+            <h3 class="timeline__role">Senior Fullstack Developer</h3>
+            <p class="timeline__company">TechCorp Solutions</p>
+            <p class="timeline__desc">
+              Projektowanie architektury i&nbsp;rozwój platformy SaaS. Prowadzenie 
+              zespołu 4 developerów. Angular 17+, .NET 8, Azure, mikroserwisy.
+            </p>
+          </div>
         </div>
-    </section>
 
-    <!-- ════════════ SKILLS ════════════ -->
-    <section class="section skills" id="skills">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__number reveal">02</span>
-                <div class="section__line"></div>
-                <span class="section__label reveal">Stack technologiczny</span>
+        <div class="timeline__item reveal">
+          <div class="timeline__marker">
+            <div class="timeline__cube">
+              <div class="iso-face iso-face--top"></div>
+              <div class="iso-face iso-face--left"></div>
+              <div class="iso-face iso-face--right"></div>
             </div>
-
-            <h2 class="section__title reveal">
-                Mój arsenał<br><em>technologiczny</em>
-            </h2>
-
-            <div class="stack">
-                <!-- Frontend Layer -->
-                <div class="stack__layer reveal">
-                    <div class="stack__layer-label">
-                        <span class="stack__layer-name">Frontend</span>
-                        <span class="stack__layer-tag">UI / UX</span>
-                    </div>
-                    <div class="stack__layer-connector"></div>
-                    <div class="stack__layer-techs">
-                        <span class="tech tech--primary">Angular</span>
-                        <span class="tech tech--primary">TypeScript</span>
-                        <span class="tech">RxJS</span>
-                        <span class="tech">NgRx</span>
-                        <span class="tech">HTML / SCSS</span>
-                    </div>
-                </div>
-
-                <div class="stack__pipe reveal"><div class="stack__pipe-line"></div></div>
-
-                <!-- API Layer -->
-                <div class="stack__layer reveal">
-                    <div class="stack__layer-label">
-                        <span class="stack__layer-name">API</span>
-                        <span class="stack__layer-tag">Komunikacja</span>
-                    </div>
-                    <div class="stack__layer-connector"></div>
-                    <div class="stack__layer-techs">
-                        <span class="tech tech--primary">REST API</span>
-                        <span class="tech">SignalR</span>
-                        <span class="tech">gRPC</span>
-                    </div>
-                </div>
-
-                <div class="stack__pipe reveal"><div class="stack__pipe-line"></div></div>
-
-                <!-- Backend Layer -->
-                <div class="stack__layer reveal">
-                    <div class="stack__layer-label">
-                        <span class="stack__layer-name">Backend</span>
-                        <span class="stack__layer-tag">Core</span>
-                    </div>
-                    <div class="stack__layer-connector"></div>
-                    <div class="stack__layer-techs">
-                        <span class="tech tech--primary">C#</span>
-                        <span class="tech tech--primary">ASP.NET Core</span>
-                        <span class="tech">Entity Framework</span>
-                        <span class="tech">MediatR</span>
-                        <span class="tech">CQRS</span>
-                    </div>
-                </div>
-
-                <div class="stack__pipe reveal"><div class="stack__pipe-line"></div></div>
-
-                <!-- Data Layer -->
-                <div class="stack__layer reveal">
-                    <div class="stack__layer-label">
-                        <span class="stack__layer-name">Dane</span>
-                        <span class="stack__layer-tag">Persistence</span>
-                    </div>
-                    <div class="stack__layer-connector"></div>
-                    <div class="stack__layer-techs">
-                        <span class="tech tech--primary">SQL Server</span>
-                        <span class="tech">PostgreSQL</span>
-                        <span class="tech">Redis</span>
-                    </div>
-                </div>
-
-                <div class="stack__pipe reveal"><div class="stack__pipe-line"></div></div>
-
-                <!-- DevOps Layer -->
-                <div class="stack__layer reveal">
-                    <div class="stack__layer-label">
-                        <span class="stack__layer-name">DevOps</span>
-                        <span class="stack__layer-tag">Infra</span>
-                    </div>
-                    <div class="stack__layer-connector"></div>
-                    <div class="stack__layer-techs">
-                        <span class="tech tech--primary">Azure</span>
-                        <span class="tech">Docker</span>
-                        <span class="tech">CI/CD</span>
-                        <span class="tech">Git</span>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <div class="timeline__content">
+            <span class="timeline__date">2021 — 2023</span>
+            <h3 class="timeline__role">Fullstack Developer</h3>
+            <p class="timeline__company">Digital Agency XYZ</p>
+            <p class="timeline__desc">
+              Budowanie aplikacji webowych dla klientów enterprise. 
+              Angular, .NET Core, Entity Framework, SQL Server, DevOps.
+            </p>
+          </div>
         </div>
-    </section>
 
-    <!-- ════════════ PROJECTS ════════════ -->
-    <section class="section projects" id="projects">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__number reveal">03</span>
-                <div class="section__line"></div>
-                <span class="section__label reveal">Projekty</span>
+        <div class="timeline__item reveal">
+          <div class="timeline__marker">
+            <div class="timeline__cube">
+              <div class="iso-face iso-face--top"></div>
+              <div class="iso-face iso-face--left"></div>
+              <div class="iso-face iso-face--right"></div>
             </div>
-
-            <h2 class="section__title reveal">
-                Wybrane<br><em>realizacje</em>
-            </h2>
-
-            <div class="projects__grid">
-                <!-- Project 1 -->
-                <article class="project reveal">
-                    <div class="project__top">
-                        <span class="project__num">01</span>
-                        <div class="project__links">
-                            <a href="#" class="project__link" aria-label="GitHub">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                            </a>
-                            <a href="#" class="project__link" aria-label="Demo">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="project__title">System ERP</h3>
-                    <p class="project__desc">Kompleksowy system zarządzania przedsiębiorstwem z modułami magazynowymi, fakturowaniem i raportowaniem. Architektura mikroserwisowa z event-driven communication.</p>
-                    <div class="project__tags">
-                        <span>.NET 8</span>
-                        <span>Angular 17</span>
-                        <span>SQL Server</span>
-                        <span>RabbitMQ</span>
-                        <span>Docker</span>
-                    </div>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="project reveal">
-                    <div class="project__top">
-                        <span class="project__num">02</span>
-                        <div class="project__links">
-                            <a href="#" class="project__link" aria-label="GitHub">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="project__title">Real-Time Chat</h3>
-                    <p class="project__desc">Platforma komunikacyjna w czasie rzeczywistym z obsługą kanałów, wiadomości prywatnych, powiadomieniami push i integracją z zewnętrznymi serwisami.</p>
-                    <div class="project__tags">
-                        <span>ASP.NET Core</span>
-                        <span>SignalR</span>
-                        <span>Angular</span>
-                        <span>Redis</span>
-                        <span>Azure</span>
-                    </div>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="project reveal">
-                    <div class="project__top">
-                        <span class="project__num">03</span>
-                        <div class="project__links">
-                            <a href="#" class="project__link" aria-label="GitHub">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                            </a>
-                            <a href="#" class="project__link" aria-label="Demo">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="project__title">Dashboard Analityczny</h3>
-                    <p class="project__desc">Interaktywny dashboard do wizualizacji danych biznesowych z dynamicznymi wykresami, filtrami i eksportem raportów do PDF i Excel.</p>
-                    <div class="project__tags">
-                        <span>Angular</span>
-                        <span>TypeScript</span>
-                        <span>.NET API</span>
-                        <span>Chart.js</span>
-                        <span>PostgreSQL</span>
-                    </div>
-                </article>
-
-                <!-- Project 4 -->
-                <article class="project reveal">
-                    <div class="project__top">
-                        <span class="project__num">04</span>
-                        <div class="project__links">
-                            <a href="#" class="project__link" aria-label="GitHub">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="project__title">E-Commerce Platform</h3>
-                    <p class="project__desc">Sklep internetowy z pełną obsługą zamówień, integracją płatności, systemem rabatowym i panelem administracyjnym. Clean Architecture + CQRS.</p>
-                    <div class="project__tags">
-                        <span>.NET 8</span>
-                        <span>Angular</span>
-                        <span>MediatR</span>
-                        <span>SQL Server</span>
-                        <span>Stripe</span>
-                    </div>
-                </article>
-            </div>
+          </div>
+          <div class="timeline__content">
+            <span class="timeline__date">2019 — 2021</span>
+            <h3 class="timeline__role">Frontend Developer</h3>
+            <p class="timeline__company">StartupHub</p>
+            <p class="timeline__desc">
+              Rozwój interfejsów użytkownika w&nbsp;Angular. Implementacja 
+              komponentów UI, integracja z&nbsp;REST API, testy jednostkowe.
+            </p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- ════════════ EXPERIENCE ════════════ -->
-    <section class="section experience" id="experience">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__number reveal">04</span>
-                <div class="section__line"></div>
-                <span class="section__label reveal">Doświadczenie</span>
-            </div>
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section contact" id="contact">
+    <div class="section__container">
+      <div class="section__header reveal">
+        <span class="section__tag">&lt;kontakt&gt;</span>
+        <h2 class="section__title">Porozmawiajmy</h2>
+        <div class="section__line"></div>
+      </div>
 
-            <h2 class="section__title reveal">
-                Ścieżka<br><em>kariery</em>
-            </h2>
-
-            <div class="timeline">
-                <div class="timeline__item reveal">
-                    <div class="timeline__marker">
-                        <div class="timeline__dot timeline__dot--active"></div>
-                    </div>
-                    <div class="timeline__content">
-                        <span class="timeline__date">2022 — Obecnie</span>
-                        <h3 class="timeline__role">Senior Fullstack Developer</h3>
-                        <span class="timeline__company">Nazwa Firmy</span>
-                        <p class="timeline__desc">Projektowanie i rozwój aplikacji enterprise w architekturze mikroserwisowej. Prowadzenie code review, mentoring juniorów, definiowanie standardów technicznych zespołu.</p>
-                    </div>
-                </div>
-
-                <div class="timeline__item reveal">
-                    <div class="timeline__marker">
-                        <div class="timeline__dot"></div>
-                    </div>
-                    <div class="timeline__content">
-                        <span class="timeline__date">2020 — 2022</span>
-                        <h3 class="timeline__role">Fullstack .NET Developer</h3>
-                        <span class="timeline__company">Nazwa Firmy</span>
-                        <p class="timeline__desc">Rozwój platformy SaaS z wykorzystaniem .NET Core i Angular. Implementacja nowych modułów, optymalizacja wydajności, integracja z zewnętrznymi API.</p>
-                    </div>
-                </div>
-
-                <div class="timeline__item reveal">
-                    <div class="timeline__marker">
-                        <div class="timeline__dot"></div>
-                    </div>
-                    <div class="timeline__content">
-                        <span class="timeline__date">2019 — 2020</span>
-                        <h3 class="timeline__role">Junior .NET Developer</h3>
-                        <span class="timeline__company">Nazwa Firmy</span>
-                        <p class="timeline__desc">Tworzenie i utrzymanie wewnętrznych aplikacji biznesowych. Nauka dobrych praktyk, wzorców projektowych i pracy w metodologii Agile/Scrum.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="contact__grid">
+        <div class="contact__info reveal">
+          <p class="contact__lead">
+            Szukasz developera do swojego projektu? Chcesz porozmawiać o&nbsp;technologii? 
+            Napisz do mnie — chętnie porozmawiam.
+          </p>
+          <div class="contact__links">
+            <a href="mailto:pawel@example.com" class="contact__link">
+              <div class="contact__link-cube">
+                <div class="iso-face iso-face--top"></div>
+                <div class="iso-face iso-face--left"></div>
+                <div class="iso-face iso-face--right"></div>
+              </div>
+              <div class="contact__link-text">
+                <span class="contact__link-label">Email</span>
+                <span class="contact__link-value">pawel@example.com</span>
+              </div>
+            </a>
+            <a href="https://github.com/" class="contact__link" target="_blank" rel="noopener">
+              <div class="contact__link-cube">
+                <div class="iso-face iso-face--top"></div>
+                <div class="iso-face iso-face--left"></div>
+                <div class="iso-face iso-face--right"></div>
+              </div>
+              <div class="contact__link-text">
+                <span class="contact__link-label">GitHub</span>
+                <span class="contact__link-value">github.com/pawel</span>
+              </div>
+            </a>
+            <a href="https://linkedin.com/" class="contact__link" target="_blank" rel="noopener">
+              <div class="contact__link-cube">
+                <div class="iso-face iso-face--top"></div>
+                <div class="iso-face iso-face--left"></div>
+                <div class="iso-face iso-face--right"></div>
+              </div>
+              <div class="contact__link-text">
+                <span class="contact__link-label">LinkedIn</span>
+                <span class="contact__link-value">linkedin.com/in/pawel</span>
+              </div>
+            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- ════════════ CONTACT ════════════ -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__number reveal">05</span>
-                <div class="section__line"></div>
-                <span class="section__label reveal">Kontakt</span>
-            </div>
+        <form class="contact__form reveal" id="contactForm">
+          <div class="form__group">
+            <input type="text" id="formName" class="form__input" placeholder=" " required>
+            <label for="formName" class="form__label">Imię i nazwisko</label>
+            <div class="form__line"></div>
+          </div>
+          <div class="form__group">
+            <input type="email" id="formEmail" class="form__input" placeholder=" " required>
+            <label for="formEmail" class="form__label">Email</label>
+            <div class="form__line"></div>
+          </div>
+          <div class="form__group">
+            <textarea id="formMessage" class="form__input form__textarea" placeholder=" " required rows="5"></textarea>
+            <label for="formMessage" class="form__label">Wiadomość</label>
+            <div class="form__line"></div>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">
+            <span class="btn__iso-cube" aria-hidden="true"></span>
+            Wyślij wiadomość
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-            <h2 class="section__title reveal">
-                Porozmawiajmy<br><em>o&nbsp;Twoim&nbsp;projekcie</em>
-            </h2>
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__brand">
+        <span class="nav__logo">PB</span>
+        <p class="footer__copy">&copy; 2026 Paweł Bartoszewski. Zbudowane z Angular &amp; .NET w sercu.</p>
+      </div>
+      <div class="footer__iso-row" aria-hidden="true">
+        <div class="footer__mini-cube"></div>
+        <div class="footer__mini-cube"></div>
+        <div class="footer__mini-cube"></div>
+        <div class="footer__mini-cube"></div>
+        <div class="footer__mini-cube"></div>
+      </div>
+    </div>
+  </footer>
 
-            <div class="contact__grid">
-                <div class="contact__info">
-                    <p class="contact__lead reveal">Masz pomysł? Zamieńmy go w kod.</p>
-                    <p class="contact__text reveal">Szukasz doświadczonego developera do swojego projektu? Chętnie porozmawiam o możliwościach współpracy.</p>
-
-                    <div class="contact__channels">
-                        <a href="mailto:kontakt@pawelbartoszewski.pl" class="contact__channel reveal">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                            <span>kontakt@pawelbartoszewski.pl</span>
-                        </a>
-                        <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="contact__channel reveal">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://github.com/" target="_blank" rel="noopener" class="contact__channel reveal">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                            <span>GitHub</span>
-                        </a>
-                    </div>
-                </div>
-
-                <form class="contact__form reveal" onsubmit="handleSubmit(event)">
-                    <div class="form__group">
-                        <input type="text" id="name" placeholder=" " required autocomplete="name">
-                        <label for="name">Twoje imię</label>
-                    </div>
-                    <div class="form__group">
-                        <input type="email" id="email" placeholder=" " required autocomplete="email">
-                        <label for="email">Twój email</label>
-                    </div>
-                    <div class="form__group">
-                        <textarea id="message" placeholder=" " required rows="4"></textarea>
-                        <label for="message">Wiadomość</label>
-                    </div>
-                    <button type="submit" class="btn btn--primary btn--full">
-                        <span>Wyślij wiadomość</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- ════════════ FOOTER ════════════ -->
-    <footer class="footer">
-        <div class="container footer__inner">
-            <span class="footer__copy">&copy; 2026 Paweł Bartoszewski</span>
-            <div class="footer__social">
-                <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-                <a href="https://linkedin.com/in/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
