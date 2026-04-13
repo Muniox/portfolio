@@ -5,8 +5,6 @@ FROM nginx:alpine
 # Kopiujemy zawartość folderu 'src' do domyślnego katalogu serwowania w Nginx
 COPY ./src /usr/share/nginx/html
 
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-
 # Informujemy Dockera, że kontener nasłuchuje na porcie 80
 EXPOSE 80
 
