@@ -184,22 +184,10 @@
   <span class="kw">readonly</span> role = <span class="st">'Senior Software Developer'</span>;
 
   <span class="kw">readonly</span> focus: <span class="tp">Area</span>[] = [
-<span class="code-wide">    { <span class="pr">name</span>: <span class="st">'Process automation'</span>, <span class="pr">level</span>: <span class="st">'expert'</span> },
+    { <span class="pr">name</span>: <span class="st">'Process automation'</span>, <span class="pr">level</span>: <span class="st">'expert'</span> },
     { <span class="pr">name</span>: <span class="st">'Cross-team collab'</span>,  <span class="pr">level</span>: <span class="st">'advanced'</span> },
     { <span class="pr">name</span>: <span class="st">'DevOps'</span>,             <span class="pr">level</span>: <span class="st">'learning'</span> },
-</span><span class="code-narrow">    {
-      <span class="pr">name</span>: <span class="st">'Process automation'</span>,
-      <span class="pr">level</span>: <span class="st">'expert'</span>
-    },
-    {
-      <span class="pr">name</span>: <span class="st">'Cross-team collab'</span>,
-      <span class="pr">level</span>: <span class="st">'advanced'</span>
-    },
-    {
-      <span class="pr">name</span>: <span class="st">'DevOps'</span>,
-      <span class="pr">level</span>: <span class="st">'learning'</span>
-    },
-</span>  ];
+  ];
 
   <span class="fn">digitalize</span>(process: <span class="tp">Process</span>): <span class="tp">Impact$</span> {
     <span class="kw">return</span> <span class="kw">this</span>.<span class="fn">analyzeNeeds</span>(process).<span class="fn">pipe</span>(

@@ -31,7 +31,11 @@
     /* ── NAV SCROLL ────────────────────────── */
     ScrollTrigger.create({
         start: 50,
-        onToggle: self => document.getElementById('nav').classList.toggle('scrolled', self.isActive),
+        onUpdate: self => {
+            const nav = document.getElementById('nav');
+            if (self.scroll() > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        },
     });
 
     /* ── BURGER / MOBILE NAV ───────────────── */

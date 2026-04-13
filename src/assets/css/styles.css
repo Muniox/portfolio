@@ -272,10 +272,9 @@ ul{list-style:none}
 .about__cw-file{margin-left:auto;font-family:var(--fm);font-size:.62rem;color:var(--tx3)}
 .about__cw-code{padding:20px;font-family:var(--fm);font-size:.72rem;line-height:1.8;color:var(--tx2);overflow-x:auto}
 .about__cw-code code{white-space:pre}
-.code-wide{display:none}
-@media(min-width:481px){
-    .code-wide{display:inline}
-    .code-narrow{display:none}
+.about__visual{display:none}
+@media(min-width:1025px){
+    .about__visual{display:block}
 }
 
 /* ── SKILLS — Tech Registry ────────────────── */
