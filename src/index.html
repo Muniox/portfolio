@@ -6,7 +6,16 @@
     <title>Portfolio | Angular &amp; .NET Developer</title>
     <meta name="description" content="Paweł Bartoszewski — Full-stack developer specjalizujący się w Angular i .NET. Skalowalne aplikacje webowe, czyste API i nowoczesny frontend.">
     <link rel="stylesheet" href="assets/fonts/fonts.css">
-    <script>(function(){var t=localStorage.getItem('portfolio-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');else if(!t&&window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');})();</script>
+    <script>
+        (function () {
+            const theme = localStorage.getItem('portfolio-theme');
+            const prefersLight = window.matchMedia('(prefers-color-scheme:light)').matches;
+
+            if (theme === 'light' || (!theme && prefersLight)) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="assets/css/styles.css">
 
 </head>

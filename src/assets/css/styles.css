@@ -131,7 +131,7 @@ ul{list-style:none}
     -webkit-mask-image:linear-gradient(transparent,black);
     z-index:3;pointer-events:none}
 
-.hero__inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,48px);
+.hero__inner{position:relative;z-index:4;max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,48px);
     display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
 
 /* ─ Left ─ */
