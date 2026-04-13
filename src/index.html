@@ -3,486 +3,523 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paweł Bartoszewski — Fullstack .NET & Angular Developer</title>
-    <meta name="description" content="Portfolio of Paweł Bartoszewski — Fullstack Developer specializing in .NET, Angular, C#, TypeScript, Azure and modern web technologies.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio | Angular &amp; .NET Developer</title>
+    <meta name="description" content="Paweł Bartoszewski — Full-stack developer specjalizujący się w Angular i .NET. Skalowalne aplikacje webowe, czyste API i nowoczesny frontend.">
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+    <script>(function(){var t=localStorage.getItem('portfolio-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');else if(!t&&window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');})();</script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+
 </head>
 <body>
+    <div class="noise" aria-hidden="true"></div>
 
-    <!-- Grid Background -->
-    <div class="grid-bg" aria-hidden="true"></div>
+    <!-- ─── NAV ─── -->
+    <header class="nav" id="nav">
+        <div class="nav__wrap">
+            <a href="#" class="logo">
+                <span class="logo__lt">&lt;</span>dev<span class="logo__gt">/&gt;</span>
+            </a>
+            <nav class="nav__links" id="navLinks">
+                <a href="#about" class="nav__link">O mnie</a>
+                <a href="#skills" class="nav__link">Stack</a>
+                <a href="#projects" class="nav__link">Projekty</a>
+                <a href="#contact" class="nav__link">Kontakt</a>
+            </nav>
+<button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">
+                <span class="theme-toggle__track">
+                    <span class="theme-toggle__thumb">
+                        <svg class="tgl-icon tgl-icon--sun" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                        <svg class="tgl-icon tgl-icon--moon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </span>
+                </span>
+            </button>
+            <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
 
-    <!-- Custom Cursor -->
-    <div class="cursor-dot" aria-hidden="true"></div>
-    <div class="cursor-ring" aria-hidden="true"></div>
-
-    <!-- Navigation -->
-    <nav class="nav" role="navigation">
-        <a href="#hero" class="nav__logo">pb<span>_dev</span></a>
-        <ul class="nav__links">
-            <li><a href="#about">O mnie</a></li>
-            <li><a href="#skills">Umiejętności</a></li>
-            <li><a href="#projects">Projekty</a></li>
-            <li><a href="#experience">Doświadczenie</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-        </ul>
-        <button class="nav__hamburger" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-
-    <!-- Mobile Nav -->
-    <div class="mobile-nav" aria-hidden="true">
-        <a href="#about">O mnie</a>
-        <a href="#skills">Umiejętności</a>
-        <a href="#projects">Projekty</a>
-        <a href="#experience">Doświadczenie</a>
-        <a href="#contact">Kontakt</a>
-    </div>
-
-    <!-- ═══════════ HERO ═══════════ -->
+    <!-- ─── HERO ─── -->
     <section class="hero" id="hero">
-        <canvas class="hero__canvas" id="heroCanvas"></canvas>
+        <div class="hero__bg">
+            <div class="hero__grid"></div>
+        </div>
 
-        <!-- Floating Code -->
-        <div class="hero__floating" aria-hidden="true">public class Developer : IFullstack { }</div>
-        <div class="hero__floating" aria-hidden="true">@Component({ selector: 'app-root' })</div>
-        <div class="hero__floating" aria-hidden="true">dotnet build --configuration Release</div>
-        <div class="hero__floating" aria-hidden="true">const observable$ = new BehaviorSubject&lt;&gt;();</div>
+        <div class="hero__inner">
+            <div class="hero__left">
+                <div class="hero__orb hero__orb--a" aria-hidden="true"></div>
+                <div class="pill" data-reveal>
+                    <span class="pill__dot"></span>
+                    Dostępny do współpracy
+                </div>
 
-        <div class="hero__content">
-            <div class="hero__badge">
-                <span class="pulse"></span>
-                Dostępny do współpracy
+                <h1 class="hero__h1" data-reveal>
+                    <span class="hero__name">PAWEŁ</span>
+                    <span class="hero__name hero__name--gr">BARTOSZEWSKI</span>
+                </h1>
+
+                <div class="hero__typed" data-reveal>
+                    <span class="hero__dash"></span>
+                    <span id="typed"></span><span class="caret"></span>
+                </div>
+
+                <p class="hero__sub" data-reveal>Full-stack developer specjalizujący się w&nbsp;budowaniu skalowalnych aplikacji webowych z&nbsp;użyciem <strong>Angular</strong> i&nbsp;<strong>.NET</strong>.</p>
+
+                <div class="hero__btns" data-reveal>
+                    <a href="#projects" class="btn btn--pr">
+                        <span>Projekty</span>
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 15L15 1M15 1H4M15 1v11"/></svg>
+                    </a>
+                    <a href="#contact" class="btn btn--gh">Współpraca</a>
+                </div>
+
+                <div class="hero__counters" data-reveal>
+                    <div class="counter">
+                        <span class="counter__n" data-count="5">0</span><span class="counter__plus">+</span>
+                        <span class="counter__l">Lat<br>doświadczenia</span>
+                    </div>
+                    <div class="counter__sep"></div>
+                    <div class="counter">
+                        <span class="counter__n" data-count="17">0</span><span class="counter__plus">+</span>
+                        <span class="counter__l">Ukończonych<br>projektów</span>
+                    </div>
+                </div>
             </div>
 
-            <h1 class="hero__name">
-                <span class="glitch" data-text="Paweł" id="heroFirstName">Paweł</span>
-                <span class="line-2 glitch" data-text="Bartoszewski" id="heroLastName">Bartoszewski</span>
-            </h1>
+            <div class="hero__right">
+                <div class="hero__orb hero__orb--b" aria-hidden="true"></div>
+                <div class="hero__orb hero__orb--c" aria-hidden="true"></div>
+                <!-- Main floating code card -->
+                <div class="fcard fcard--main">
+                    <div class="fcard__bar">
+                        <span class="fcard__dot fcard__dot--r"></span>
+                        <span class="fcard__dot fcard__dot--y"></span>
+                        <span class="fcard__dot fcard__dot--g"></span>
+                        <span class="fcard__title">dashboard.component.ts</span>
+                    </div>
+                    <pre class="fcard__code"><code><span class="sy">@Component</span>({
+  <span class="pr">selector</span>: <span class="st">'app-dashboard'</span>,
+  <span class="pr">standalone</span>: <span class="kw">true</span>,
+  <span class="pr">imports</span>: [CommonModule],
+})
+<span class="kw">export class</span> <span class="tp">DashboardComponent</span> {
+  <span class="kw">private readonly</span> api = <span class="fn">inject</span>(<span class="tp">ApiService</span>);
 
-            <p class="hero__subtitle">
-                <span id="typed"></span><span class="typed-cursor">|</span>
-            </p>
+  data$ = <span class="kw">this</span>.api.<span class="fn">getAll</span>().<span class="fn">pipe</span>(
+    <span class="fn">map</span>(res =&gt; res.items),
+    <span class="fn">shareReplay</span>(1)
+  );
+}</code></pre>
+                </div>
 
-            <div class="hero__cta-row">
-                <a href="#projects" class="btn-primary">Poznaj moje projekty</a>
-                <a href="#contact" class="btn-secondary">Skontaktuj się</a>
+                <!-- Terminal card -->
+                <div class="fcard fcard--term">
+                    <div class="fcard__bar">
+                        <span class="fcard__dot fcard__dot--r"></span>
+                        <span class="fcard__dot fcard__dot--y"></span>
+                        <span class="fcard__dot fcard__dot--g"></span>
+                        <span class="fcard__title">terminal</span>
+                    </div>
+                    <pre class="fcard__code fcard__code--term"><code><span class="st">$</span> ng serve
+<span class="fn">✓</span> Compiled successfully.
+  <span class="pr">Local</span>:   https://localhost:4200
+  <span class="pr">Network</span>: https://192.168.1.5:4200
+</code></pre>
+                </div>
+
+                <!-- Status card -->
+                <div class="fcard fcard--status">
+                    <div class="fcard__status-row">
+                        <span class="fcard__status-dot"></span>
+                        <span>Build <strong>Passed</strong></span>
+                    </div>
+                    <div class="fcard__status-info">.NET 8 &bull; Angular 17 &bull; Production</div>
+                </div>
+
+                <!-- Floating tech orbs -->
+                <div class="torb torb--ng" aria-hidden="true">
+                    <img src="assets/img/Angular_gradient_logo.png" alt="" width="26" height="26">
+                </div>
+                <div class="torb torb--dn" aria-hidden="true">
+                    <img src="assets/img/Microsoft_.NET_logo.png" alt="" width="26" height="26">
+                </div>
+                <div class="torb torb--ts" aria-hidden="true">
+                    <img src="assets/img/Typescript_logo_2020.svg.png" alt="" width="26" height="26">
+                </div>
+                <div class="torb torb--js" aria-hidden="true">
+                    <img src="assets/img/JavaScript-logo.png" alt="" width="26" height="26">
+                </div>
             </div>
         </div>
 
-        <div class="hero__scroll-hint">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
+        <div class="hero__scroll-ind">
+            <span>scroll</span>
+            <div class="hero__scroll-bar"><div class="hero__scroll-fill"></div></div>
         </div>
     </section>
 
-    <!-- Marquee -->
-    <div class="marquee-wrapper" aria-hidden="true">
-        <div class="marquee">
-            <span>.NET</span><span class="filled">Angular</span><span>C#</span><span class="filled">TypeScript</span>
-            <span>Azure</span><span class="filled">Docker</span><span>SQL</span><span class="filled">REST API</span>
-            <span>Entity Framework</span><span class="filled">RxJS</span><span>Microservices</span><span class="filled">CI/CD</span>
-            <span>.NET</span><span class="filled">Angular</span><span>C#</span><span class="filled">TypeScript</span>
-            <span>Azure</span><span class="filled">Docker</span><span>SQL</span><span class="filled">REST API</span>
-            <span>Entity Framework</span><span class="filled">RxJS</span><span>Microservices</span><span class="filled">CI/CD</span>
-        </div>
-    </div>
-
-    <!-- ═══════════ ABOUT ═══════════ -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-label reveal">// o mnie</div>
-            <h2 class="section-title reveal reveal-delay-1">Budowanie rozwiązań<br>od A do Z</h2>
-
-            <div class="about__grid">
-                <div class="about__terminal reveal reveal-delay-2">
-                    <div class="terminal__header">
-                        <div class="terminal__dot terminal__dot--red"></div>
-                        <div class="terminal__dot terminal__dot--yellow"></div>
-                        <div class="terminal__dot terminal__dot--green"></div>
-                        <span class="terminal__title">pawel@dev ~ /about</span>
-                    </div>
-                    <div class="terminal__body">
-                        <div class="terminal__line"><span class="terminal__key">nazwa</span>: <span class="terminal__value">"Paweł Bartoszewski"</span></div>
-                        <div class="terminal__line"><span class="terminal__key">rola</span>: <span class="terminal__value">"Fullstack Developer"</span></div>
-                        <div class="terminal__line"><span class="terminal__key">stack</span>: <span class="terminal__value">[".NET", "Angular"]</span></div>
-                        <div class="terminal__line"><span class="terminal__key">backend</span>: <span class="terminal__value">["C#", "ASP.NET Core", "EF Core"]</span></div>
-                        <div class="terminal__line"><span class="terminal__key">frontend</span>: <span class="terminal__value">["Angular", "TypeScript", "RxJS"]</span></div>
-                        <div class="terminal__line"><span class="terminal__key">cloud</span>: <span class="terminal__value">["Azure", "Docker", "CI/CD"]</span></div>
-                        <div class="terminal__line"><span class="terminal__key">db</span>: <span class="terminal__value">["SQL Server", "PostgreSQL"]</span></div>
-                        <div class="terminal__line"><span class="terminal__key">pasja</span>: <span class="terminal__value">"Czysty kod & architektura"</span></div>
-                    </div>
+    <!-- ─── ABOUT ─── -->
+    <section class="about sec" id="about">
+        <div class="wrap">
+            <span class="sec__tag" data-reveal><span class="sec__num">01</span><span class="sec__line"></span>O mnie</span>
+            <div class="about__row">
+                <div class="about__txt" data-reveal>
+                    <h2 class="sec__h2">Łączę <span class="gr">kod</span> z&nbsp;realnymi potrzebami biznesu &mdash; od frontendu, przez backend, aż po digitalizację procesów</h2>
+                    <img src="assets/img/Gemini_Generated_Image_hw6mtxhw6mtxhw6m.png" alt="Paweł Bartoszewski" class="about__photo">
+                    <p class="about__p">Jestem full-stack developerem specjalizującym się w&nbsp;ekosystemie <strong>Angular</strong> oraz platformie <strong>.NET</strong>. Od ponad 5 lat projektuję i&nbsp;wdrażam skalowalne aplikacje webowe &mdash; od interaktywnych dashboardów po złożone systemy enterprise.</p>
+                    <p class="about__p">Obecnie pracuję w&nbsp;<strong>LG Electronics</strong> jako <strong>Senior Software Developer</strong> w&nbsp;dziale <strong>Digitalizacji</strong>. Zajmuję się wdrażaniem systemów usprawniających pracę innych działów &mdash; dzięki temu nauczyłem się efektywnej współpracy międzydziałowej oraz identyfikowania potrzeb i&nbsp;obszarów, które warto zdigitalizować.</p>
+                    <p class="about__p">Równolegle zgłębiam wiedzę w&nbsp;obszarze <strong>DevOps</strong>, aby jeszcze sprawniej łączyć proces wytwarzania oprogramowania z&nbsp;jego wdrażaniem i&nbsp;utrzymaniem.</p>
                 </div>
-
-                <div class="about__text">
-                    <p class="reveal reveal-delay-3">
-                        Jestem <strong>fullstack developerem</strong> specjalizującym się w ekosystemie <strong>.NET</strong> i <strong>Angular</strong>. Tworzę skalowalne aplikacje webowe, od solidnego backendu po dopracowany frontend.
-                    </p>
-                    <p class="reveal reveal-delay-4">
-                        Wierzę w <strong>czysty kod</strong>, dobrą architekturę i rozwiązania, które naprawdę działają. Łączę wiedzę z obu stron stacka, by dostarczać kompletne, przemyślane produkty — od REST API i mikroserwisów po responsywne interfejsy użytkownika.
-                    </p>
-
-                    <div class="about__stats reveal reveal-delay-5">
-                        <div class="stat">
-                            <div class="stat__number">5+</div>
-                            <div class="stat__label">Lat doświadczenia</div>
+                <div class="about__visual" data-reveal>
+                    <div class="about__codewin">
+                        <div class="about__cw-bar">
+                            <span class="about__cw-dot" style="background:#ff5f57"></span>
+                            <span class="about__cw-dot" style="background:#febc2e"></span>
+                            <span class="about__cw-dot" style="background:#28c840"></span>
+                            <span class="about__cw-file">digitalization.service.ts</span>
                         </div>
-                        <div class="stat">
-                            <div class="stat__number">20+</div>
-                            <div class="stat__label">Zrealizowanych projektów</div>
+                        <pre class="about__cw-code"><code><span class="kw">type</span> <span class="tp">Impact$</span> = <span class="tp">Observable</span>&lt;<span class="tp">Impact</span>&gt;;
+
+<span class="kw">@Injectable</span>({ <span class="pr">providedIn</span>: <span class="st">'root'</span> })
+<span class="kw">export class</span> <span class="tp">DigitalizationService</span> {
+
+  <span class="kw">readonly</span> role = <span class="st">'Senior Software Developer'</span>;
+
+  <span class="kw">readonly</span> focus: <span class="tp">Area</span>[] = [
+<span class="code-wide">    { <span class="pr">name</span>: <span class="st">'Process automation'</span>, <span class="pr">level</span>: <span class="st">'expert'</span> },
+    { <span class="pr">name</span>: <span class="st">'Cross-team collab'</span>,  <span class="pr">level</span>: <span class="st">'advanced'</span> },
+    { <span class="pr">name</span>: <span class="st">'DevOps'</span>,             <span class="pr">level</span>: <span class="st">'learning'</span> },
+</span><span class="code-narrow">    {
+      <span class="pr">name</span>: <span class="st">'Process automation'</span>,
+      <span class="pr">level</span>: <span class="st">'expert'</span>
+    },
+    {
+      <span class="pr">name</span>: <span class="st">'Cross-team collab'</span>,
+      <span class="pr">level</span>: <span class="st">'advanced'</span>
+    },
+    {
+      <span class="pr">name</span>: <span class="st">'DevOps'</span>,
+      <span class="pr">level</span>: <span class="st">'learning'</span>
+    },
+</span>  ];
+
+  <span class="fn">digitalize</span>(process: <span class="tp">Process</span>): <span class="tp">Impact$</span> {
+    <span class="kw">return</span> <span class="kw">this</span>.<span class="fn">analyzeNeeds</span>(process).<span class="fn">pipe</span>(
+      <span class="fn">map</span>(needs =&gt; <span class="fn">designSolution</span>(needs)),
+      <span class="fn">switchMap</span>(sol =&gt; <span class="kw">this</span>.<span class="fn">deploy</span>(sol)),
+      <span class="fn">tap</span>(() =&gt; console.<span class="fn">log</span>(<span class="st">'delivered ✓'</span>))
+    );
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── SKILLS ─── -->
+    <section class="skills sec" id="skills">
+        <div class="wrap">
+            <span class="sec__tag" data-reveal><span class="sec__num">02</span><span class="sec__line"></span>Tech Stack</span>
+            <h2 class="sec__h2 sec__h2--mb" data-reveal>Technologie, z&nbsp;którymi <span class="gr">pracuję</span></h2>
+
+            <div class="stack" data-reveal>
+                <article class="stack__cat" style="--cat:var(--ac)">
+                    <header class="stack__head">
+                        <div class="stack__head-l">
+                            <span class="stack__num" aria-hidden="true">01</span>
+                            <div class="stack__head-lt">
+                                <b class="stack__tag">frontend</b>
+                                <span class="stack__meta">ui layer &mdash; interface &amp; motion</span>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <div class="stat__number">∞</div>
-                            <div class="stat__label">Pasja do kodu</div>
+                        <span class="stack__count">04 entries</span>
+                    </header>
+                    <div class="stack__grid">
+                        <div class="stack__tile" style="--col:#dd304f">
+                            <span class="stack__bk stack__bk--tl"></span><span class="stack__bk stack__bk--br"></span>
+                            <div class="stack__logo"><img src="assets/img/Angular_gradient_logo.png" alt="Angular" loading="lazy"></div>
+                            <div class="stack__name">Angular</div>
+                            <div class="stack__kind">framework</div>
+                        </div>
+                        <div class="stack__tile" style="--col:#3178c6">
+                            <span class="stack__bk stack__bk--tl"></span><span class="stack__bk stack__bk--br"></span>
+                            <div class="stack__logo"><img src="assets/img/Typescript_logo_2020.svg.png" alt="TypeScript" loading="lazy"></div>
+                            <div class="stack__name">TypeScript</div>
+                            <div class="stack__kind">language</div>
+                        </div>
+                        <div class="stack__tile" style="--col:#cf3888">
+                            <span class="stack__bk stack__bk--tl"></span><span class="stack__bk stack__bk--br"></span>
+                            <div class="stack__logo"><img src="assets/img/rxjs.png" alt="RxJS" loading="lazy"></div>
+                            <div class="stack__name">RxJS</div>
+                            <div class="stack__kind">reactive</div>
+                        </div>
+                        <div class="stack__tile" style="--col:#38bdf8">
+                            <span class="stack__bk stack__bk--tl"></span><span class="stack__bk stack__bk--br"></span>
+                            <div class="stack__logo"><img src="assets/img/Tailwind_CSS_Logo.png" alt="Tailwind CSS" loading="lazy"></div>
+                            <div class="stack__name">Tailwind</div>
+                            <div class="stack__kind">utility css</div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                </article>
 
-    <!-- ═══════════ SKILLS ═══════════ -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <div class="section-label reveal">// umiejętności</div>
-            <h2 class="section-title reveal reveal-delay-1">Mój arsenał<br>technologiczny</h2>
-
-            <h3 class="skills__category reveal reveal-delay-2">Backend <span class="tag">core</span></h3>
-            <div class="skills__grid">
-                <div class="skill-card reveal reveal-delay-2">
-                    <span class="skill-card__icon">⚙️</span>
-                    <div class="skill-card__name">C#</div>
-                    <div class="skill-card__level">Zaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 95%"></div></div>
-                </div>
-                <div class="skill-card reveal reveal-delay-3">
-                    <span class="skill-card__icon">🔷</span>
-                    <div class="skill-card__name">.NET Core</div>
-                    <div class="skill-card__level">Zaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 93%"></div></div>
-                </div>
-                <div class="skill-card reveal reveal-delay-4">
-                    <span class="skill-card__icon">🌐</span>
-                    <div class="skill-card__name">ASP.NET</div>
-                    <div class="skill-card__level">Zaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 92%"></div></div>
-                </div>
-                <div class="skill-card reveal reveal-delay-5">
-                    <span class="skill-card__icon">🗄️</span>
-                    <div class="skill-card__name">Entity Framework</div>
-                    <div class="skill-card__level">Zaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 90%"></div></div>
-                </div>
-                <div class="skill-card reveal reveal-delay-2">
-                    <span class="skill-card__icon">📡</span>
-                    <div class="skill-card__name">REST API</div>
-                    <div class="skill-card__level">Zaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 94%"></div></div>
-                </div>
-                <div class="skill-card reveal reveal-delay-3">
-                    <span class="skill-card__icon">🔀</span>
-                    <div class="skill-card__name">SignalR</div>
-                    <div class="skill-card__level">Średniozaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 75%"></div></div>
-                </div>
-            </div>
-
-            <h3 class="skills__category reveal">Frontend <span class="tag">ui/ux</span></h3>
-            <div class="skills__grid">
-                <div class="skill-card reveal reveal-delay-2">
-                    <span class="skill-card__icon">🅰️</span>
-                    <div class="skill-card__name">Angular</div>
-                    <div class="skill-card__level">Zaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 92%"></div></div>
-                </div>
-                <div class="skill-card reveal reveal-delay-3">
-                    <span class="skill-card__icon">📘</span>
-                    <div class="skill-card__name">TypeScript</div>
-                    <div class="skill-card__level">Zaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 91%"></div></div>
-                </div>
-                <div class="skill-card reveal reveal-delay-4">
-                    <span class="skill-card__icon">🔄</span>
-                    <div class="skill-card__name">RxJS</div>
-                    <div class="skill-card__level">Zaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 88%"></div></div>
-                </div>
-                <div class="skill-card reveal reveal-delay-5">
-                    <span class="skill-card__icon">🎨</span>
-                    <div class="skill-card__name">HTML/CSS/SCSS</div>
-                    <div class="skill-card__level">Zaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 90%"></div></div>
-                </div>
-                <div class="skill-card reveal reveal-delay-2">
-                    <span class="skill-card__icon">📊</span>
-                    <div class="skill-card__name">NgRx</div>
-                    <div class="skill-card__level">Średniozaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 78%"></div></div>
-                </div>
-            </div>
-
-            <h3 class="skills__category reveal">DevOps & Cloud <span class="tag">infra</span></h3>
-            <div class="skills__grid">
-                <div class="skill-card reveal reveal-delay-2">
-                    <span class="skill-card__icon">☁️</span>
-                    <div class="skill-card__name">Azure</div>
-                    <div class="skill-card__level">Średniozaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 80%"></div></div>
-                </div>
-                <div class="skill-card reveal reveal-delay-3">
-                    <span class="skill-card__icon">🐳</span>
-                    <div class="skill-card__name">Docker</div>
-                    <div class="skill-card__level">Średniozaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 82%"></div></div>
-                </div>
-                <div class="skill-card reveal reveal-delay-4">
-                    <span class="skill-card__icon">🔁</span>
-                    <div class="skill-card__name">CI/CD</div>
-                    <div class="skill-card__level">Średniozaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 78%"></div></div>
-                </div>
-                <div class="skill-card reveal reveal-delay-5">
-                    <span class="skill-card__icon">🐙</span>
-                    <div class="skill-card__name">Git</div>
-                    <div class="skill-card__level">Zaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 90%"></div></div>
-                </div>
-            </div>
-
-            <h3 class="skills__category reveal">Bazy danych <span class="tag">data</span></h3>
-            <div class="skills__grid">
-                <div class="skill-card reveal reveal-delay-2">
-                    <span class="skill-card__icon">🗃️</span>
-                    <div class="skill-card__name">SQL Server</div>
-                    <div class="skill-card__level">Zaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 90%"></div></div>
-                </div>
-                <div class="skill-card reveal reveal-delay-3">
-                    <span class="skill-card__icon">🐘</span>
-                    <div class="skill-card__name">PostgreSQL</div>
-                    <div class="skill-card__level">Średniozaawansowany</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 78%"></div></div>
-                </div>
-                <div class="skill-card reveal reveal-delay-4">
-                    <span class="skill-card__icon">⚡</span>
-                    <div class="skill-card__name">Redis</div>
-                    <div class="skill-card__level">Podstawowy</div>
-                    <div class="skill-card__bar"><div class="skill-card__bar-fill" style="--level: 60%"></div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════ PROJECTS ═══════════ -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <div class="section-label reveal">// projekty</div>
-            <h2 class="section-title reveal reveal-delay-1">Wybrane<br>realizacje</h2>
-
-            <div class="projects__grid">
-                <!-- Project 1 -->
-                <div class="project-card reveal reveal-delay-2">
-                    <div class="project-card__header">
-                        <div class="project-card__number">01</div>
-                        <div class="project-card__icon">🏢</div>
-                        <h3 class="project-card__title">System ERP</h3>
-                        <p class="project-card__desc">Kompleksowy system zarządzania przedsiębiorstwem z modułami magazynowymi, fakturowaniem i raportowaniem. Architektura mikroserwisowa z event-driven communication.</p>
-                    </div>
-                    <div class="project-card__footer">
-                        <span class="project-card__tag">.NET 8</span>
-                        <span class="project-card__tag">Angular 17</span>
-                        <span class="project-card__tag">SQL Server</span>
-                        <span class="project-card__tag">RabbitMQ</span>
-                        <span class="project-card__tag">Docker</span>
-                    </div>
-                    <div class="project-card__links">
-                        <a href="#" class="project-card__link">
-                            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" fill="none" stroke-width="2"/></svg>
-                            GitHub
-                        </a>
-                        <a href="#" class="project-card__link">
-                            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" fill="none" stroke-width="2"/></svg>
-                            Live Demo
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card reveal reveal-delay-3">
-                    <div class="project-card__header">
-                        <div class="project-card__number">02</div>
-                        <div class="project-card__icon">💬</div>
-                        <h3 class="project-card__title">Real-Time Chat Platform</h3>
-                        <p class="project-card__desc">Platforma komunikacyjna w czasie rzeczywistym z obsługą kanałów, wiadomości prywatnych, powiadomieniami push i integracją z zewnętrznymi serwisami.</p>
-                    </div>
-                    <div class="project-card__footer">
-                        <span class="project-card__tag">ASP.NET Core</span>
-                        <span class="project-card__tag">SignalR</span>
-                        <span class="project-card__tag">Angular</span>
-                        <span class="project-card__tag">Redis</span>
-                        <span class="project-card__tag">Azure</span>
-                    </div>
-                    <div class="project-card__links">
-                        <a href="#" class="project-card__link">
-                            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" fill="none" stroke-width="2"/></svg>
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card reveal reveal-delay-4">
-                    <div class="project-card__header">
-                        <div class="project-card__number">03</div>
-                        <div class="project-card__icon">📊</div>
-                        <h3 class="project-card__title">Dashboard Analityczny</h3>
-                        <p class="project-card__desc">Interaktywny dashboard do wizualizacji danych biznesowych z dynamicznymi wykresami, filtrami i eksportem raportów do PDF i Excel.</p>
-                    </div>
-                    <div class="project-card__footer">
-                        <span class="project-card__tag">Angular</span>
-                        <span class="project-card__tag">TypeScript</span>
-                        <span class="project-card__tag">.NET API</span>
-                        <span class="project-card__tag">Chart.js</span>
-                        <span class="project-card__tag">PostgreSQL</span>
-                    </div>
-                    <div class="project-card__links">
-                        <a href="#" class="project-card__link">
-                            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" fill="none" stroke-width="2"/></svg>
-                            GitHub
-                        </a>
-                        <a href="#" class="project-card__link">
-                            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" fill="none" stroke-width="2"/></svg>
-                            Live Demo
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card reveal reveal-delay-5">
-                    <div class="project-card__header">
-                        <div class="project-card__number">04</div>
-                        <div class="project-card__icon">🛒</div>
-                        <h3 class="project-card__title">E-Commerce Platform</h3>
-                        <p class="project-card__desc">Sklep internetowy z pełną obsługą zamówień, integracją płatności, systemem rabatowym i panelem administracyjnym. Clean Architecture + CQRS pattern.</p>
-                    </div>
-                    <div class="project-card__footer">
-                        <span class="project-card__tag">.NET 8</span>
-                        <span class="project-card__tag">Angular</span>
-                        <span class="project-card__tag">MediatR</span>
-                        <span class="project-card__tag">SQL Server</span>
-                        <span class="project-card__tag">Stripe</span>
-                    </div>
-                    <div class="project-card__links">
-                        <a href="#" class="project-card__link">
-                            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" fill="none" stroke-width="2"/></svg>
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════ EXPERIENCE ═══════════ -->
-    <section class="experience" id="experience">
-        <div class="container">
-            <div class="section-label reveal">// doświadczenie</div>
-            <h2 class="section-title reveal reveal-delay-1">Ścieżka<br>kariery</h2>
-
-            <div class="experience__timeline">
-                <div class="timeline-item reveal reveal-delay-2">
-                    <div class="timeline-item__date">2022 — Obecnie</div>
-                    <div class="timeline-item__role">Senior Fullstack Developer</div>
-                    <div class="timeline-item__company">Nazwa Firmy</div>
-                    <div class="timeline-item__desc">Projektowanie i rozwój aplikacji enterprise w architekturze mikroserwisowej. Prowadzenie code review, mentoring juniorów, definiowanie standardów technicznych zespołu.</div>
-                </div>
-
-                <div class="timeline-item reveal reveal-delay-3">
-                    <div class="timeline-item__date">2020 — 2022</div>
-                    <div class="timeline-item__role">Fullstack .NET Developer</div>
-                    <div class="timeline-item__company">Nazwa Firmy</div>
-                    <div class="timeline-item__desc">Rozwój platformy SaaS z wykorzystaniem .NET Core i Angular. Implementacja nowych modułów, optymalizacja wydajności, integracja z zewnętrznymi API.</div>
-                </div>
-
-                <div class="timeline-item reveal reveal-delay-4">
-                    <div class="timeline-item__date">2019 — 2020</div>
-                    <div class="timeline-item__role">Junior .NET Developer</div>
-                    <div class="timeline-item__company">Nazwa Firmy</div>
-                    <div class="timeline-item__desc">Tworzenie i utrzymanie wewnętrznych aplikacji biznesowych. Nauka dobrych praktyk, wzorców projektowych i pracy w metodologii Agile/Scrum.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════ CONTACT ═══════════ -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-label reveal">// kontakt</div>
-            <h2 class="section-title reveal reveal-delay-1">Porozmawiajmy<br>o Twoim projekcie</h2>
-
-            <div class="contact__grid">
-                <div class="contact__info reveal reveal-delay-2">
-                    <h3>Masz pomysł?<br>Zamieńmy go w kod.</h3>
-                    <p>Szukasz doświadczonego developera do swojego projektu? Chętnie porozmawiam o możliwościach współpracy — czy to jako część zespołu, czy na projekcie indywidualnym.</p>
-
-                    <div class="contact__channels">
-                        <a href="mailto:kontakt@pawelbartoszewski.pl" class="contact-link">
-                            <div class="contact-link__icon">
-                                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <article class="stack__cat" style="--cat:var(--ac2)">
+                    <header class="stack__head">
+                        <div class="stack__head-l">
+                            <span class="stack__num" aria-hidden="true">02</span>
+                            <div class="stack__head-lt">
+                                <b class="stack__tag">backend</b>
+                                <span class="stack__meta">services &mdash; apis &amp; data</span>
                             </div>
-                            <span class="contact-link__text">kontakt@pawelbartoszewski.pl</span>
-                        </a>
-                        <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="contact-link">
-                            <div class="contact-link__icon">
-                                <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                            </div>
-                            <span class="contact-link__text">LinkedIn</span>
-                        </a>
-                        <a href="https://github.com/" target="_blank" rel="noopener" class="contact-link">
-                            <div class="contact-link__icon">
-                                <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                            </div>
-                            <span class="contact-link__text">GitHub</span>
-                        </a>
+                        </div>
+                        <span class="stack__count">06 entries</span>
+                    </header>
+                    <div class="stack__grid">
+                        <div class="stack__tile" style="--col:#8b6cf0">
+                            <span class="stack__bk stack__bk--tl"></span><span class="stack__bk stack__bk--br"></span>
+                            <div class="stack__logo"><img src="assets/img/Microsoft_.NET_logo.png" alt=".NET" loading="lazy"></div>
+                            <div class="stack__name">.NET 7+ / C#</div>
+                            <div class="stack__kind">runtime</div>
+                        </div>
+                        <div class="stack__tile" style="--col:#0ea5e9">
+                            <span class="stack__bk stack__bk--tl"></span><span class="stack__bk stack__bk--br"></span>
+                            <div class="stack__logo"><img src="assets/img/signalr.png" alt="SignalR" loading="lazy"></div>
+                            <div class="stack__name">SignalR</div>
+                            <div class="stack__kind">real-time</div>
+                        </div>
+                        <div class="stack__tile" style="--col:#a78bfa">
+                            <span class="stack__bk stack__bk--tl"></span><span class="stack__bk stack__bk--br"></span>
+                            <div class="stack__logo"><img src="assets/img/ef-core.png" alt="Entity Framework Core" loading="lazy"></div>
+                            <div class="stack__name">EF Core</div>
+                            <div class="stack__kind">orm</div>
+                        </div>
+                        <div class="stack__tile" style="--col:#00ddb0">
+                            <span class="stack__bk stack__bk--tl"></span><span class="stack__bk stack__bk--br"></span>
+                            <div class="stack__logo"><img src="assets/img/rest-api.png" alt="REST API" loading="lazy"></div>
+                            <div class="stack__name">REST API</div>
+                            <div class="stack__kind">pattern</div>
+                        </div>
+                        <div class="stack__tile" style="--col:#ff5555"><span class="stack__bk stack__bk--tl"></span><span class="stack__bk stack__bk--br"></span>
+                            <div class="stack__logo"><img src="assets/img/oracle-1-logo-png-transparent.png" alt="Oracle" loading="lazy"></div>
+                            <div class="stack__name">Oracle</div>
+                            <div class="stack__kind">database</div>
+                        </div>
+                        <div class="stack__tile" style="--col:#6ba3d4">
+                            <span class="stack__bk stack__bk--tl"></span><span class="stack__bk stack__bk--br"></span>
+                            <div class="stack__logo"><img src="assets/img/Postgresql_elephant.svg.png" alt="PostgreSQL" loading="lazy"></div>
+                            <div class="stack__name">PostgreSQL</div>
+                            <div class="stack__kind">database</div>
+                        </div>
                     </div>
-                </div>
+                </article>
 
-                <form class="contact__form reveal reveal-delay-3" onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <input type="text" placeholder="Twoje imię" required>
+                <article class="stack__cat" style="--cat:var(--ac3)">
+                    <header class="stack__head">
+                        <div class="stack__head-l">
+                            <span class="stack__num" aria-hidden="true">03</span>
+                            <div class="stack__head-lt">
+                                <b class="stack__tag">devops</b>
+                                <span class="stack__meta">operations &mdash; ci &amp; identity</span>
+                            </div>
+                        </div>
+                        <span class="stack__count">02 entries</span>
+                    </header>
+                    <div class="stack__grid">
+                        <div class="stack__tile" style="--col:#fc6d26">
+                            <span class="stack__bk stack__bk--tl"></span><span class="stack__bk stack__bk--br"></span>
+                            <div class="stack__logo"><img src="assets/img/GitLab_icon.png" alt="GitLab" loading="lazy"></div>
+                            <div class="stack__name">GitLab</div>
+                            <div class="stack__kind">ci / cd</div>
+                        </div>
+                        <div class="stack__tile" style="--col:#ff6a6a">
+                            <span class="stack__bk stack__bk--tl"></span><span class="stack__bk stack__bk--br"></span>
+                            <div class="stack__logo"><img src="assets/img/Keycloak_Logo.png" alt="Keycloak" loading="lazy"></div>
+                            <div class="stack__name">Keycloak</div>
+                            <div class="stack__kind">auth / sso</div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Twój email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Wiadomość..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary">Wyślij wiadomość</button>
-                </form>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ─── PROJECTS ─── -->
+    <section class="projects sec" id="projects">
+        <div class="wrap">
+            <span class="sec__tag" data-reveal><span class="sec__num">03</span><span class="sec__line"></span>Projekty</span>
+            <h2 class="sec__h2 sec__h2--mb" data-reveal>Wybrane <span class="gr">realizacje</span></h2>
+
+            <div class="pj__grid">
+                <article class="pj" data-reveal>
+                    <div class="pj__visual pj__visual--1">
+                        <div class="pj__v-inner">
+                            <div class="pj__mockup">
+                                <div class="pj__mockup-bar"></div>
+                                <div class="pj__mockup-body">
+                                    <div class="pj__mockup-sidebar"></div>
+                                    <div class="pj__mockup-content">
+                                        <div class="pj__mockup-row"></div>
+                                        <div class="pj__mockup-row pj__mockup-row--short"></div>
+                                        <div class="pj__mockup-cards">
+                                            <div class="pj__mockup-card"></div>
+                                            <div class="pj__mockup-card"></div>
+                                            <div class="pj__mockup-card"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pj__body">
+                        <span class="pj__n">01</span>
+                        <h3 class="pj__title">TaskBoard Pro</h3>
+                        <p class="pj__desc">System zarządzania projektami z&nbsp;real-time aktualizacjami. Tablice Kanban, wykresy Gantta, powiadomienia live.</p>
+                        <div class="pj__tags"><span>Angular 17</span><span>.NET 8</span><span>SignalR</span><span>SQL Server</span></div>
+                        <div class="pj__links">
+                            <a href="#" class="pj__link">Demo &nearr;</a>
+                            <a href="#" class="pj__link">GitHub &nearr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="pj" data-reveal>
+                    <div class="pj__visual pj__visual--2">
+                        <div class="pj__v-inner">
+                            <div class="pj__mockup">
+                                <div class="pj__mockup-bar"></div>
+                                <div class="pj__mockup-body">
+                                    <div class="pj__mockup-nav"></div>
+                                    <div class="pj__mockup-hero-block"></div>
+                                    <div class="pj__mockup-grid3">
+                                        <div class="pj__mockup-card"></div>
+                                        <div class="pj__mockup-card"></div>
+                                        <div class="pj__mockup-card"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pj__body">
+                        <span class="pj__n">02</span>
+                        <h3 class="pj__title">ShopEngine</h3>
+                        <p class="pj__desc">Platforma e-commerce z&nbsp;mikroserwisową architekturą. Koszyk, płatności, panel admina, system rekomendacji.</p>
+                        <div class="pj__tags"><span>Angular</span><span>NgRx</span><span>.NET Microservices</span><span>RabbitMQ</span></div>
+                        <div class="pj__links">
+                            <a href="#" class="pj__link">Demo &nearr;</a>
+                            <a href="#" class="pj__link">GitHub &nearr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="pj" data-reveal>
+                    <div class="pj__visual pj__visual--3">
+                        <div class="pj__v-inner">
+                            <div class="pj__mockup">
+                                <div class="pj__mockup-bar"></div>
+                                <div class="pj__mockup-body">
+                                    <div class="pj__mockup-chart"></div>
+                                    <div class="pj__mockup-chart-bars">
+                                        <div class="pj__mockup-cbar" style="height:60%"></div>
+                                        <div class="pj__mockup-cbar" style="height:85%"></div>
+                                        <div class="pj__mockup-cbar" style="height:45%"></div>
+                                        <div class="pj__mockup-cbar" style="height:70%"></div>
+                                        <div class="pj__mockup-cbar" style="height:90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pj__body">
+                        <span class="pj__n">03</span>
+                        <h3 class="pj__title">DataViz Dashboard</h3>
+                        <p class="pj__desc">Panel analityczny z&nbsp;interaktywnymi wizualizacjami. Wykresy real-time, filtry, eksport raportów do PDF.</p>
+                        <div class="pj__tags"><span>Angular</span><span>D3.js</span><span>.NET Core API</span><span>PostgreSQL</span></div>
+                        <div class="pj__links">
+                            <a href="#" class="pj__link">Demo &nearr;</a>
+                            <a href="#" class="pj__link">GitHub &nearr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="pj" data-reveal>
+                    <div class="pj__visual pj__visual--4">
+                        <div class="pj__v-inner">
+                            <div class="pj__mockup">
+                                <div class="pj__mockup-bar"></div>
+                                <div class="pj__mockup-body pj__mockup-body--chat">
+                                    <div class="pj__mockup-chatlist">
+                                        <div class="pj__mockup-chatitem"></div>
+                                        <div class="pj__mockup-chatitem pj__mockup-chatitem--active"></div>
+                                        <div class="pj__mockup-chatitem"></div>
+                                    </div>
+                                    <div class="pj__mockup-chatmain">
+                                        <div class="pj__mockup-msg pj__mockup-msg--in"></div>
+                                        <div class="pj__mockup-msg pj__mockup-msg--out"></div>
+                                        <div class="pj__mockup-msg pj__mockup-msg--in pj__mockup-msg--short"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pj__body">
+                        <span class="pj__n">04</span>
+                        <h3 class="pj__title">ChatFlow</h3>
+                        <p class="pj__desc">Komunikator czasu rzeczywistego z&nbsp;kanałami, wiadomościami prywatnymi, udostępnianiem plików.</p>
+                        <div class="pj__tags"><span>Angular</span><span>RxJS</span><span>WebSockets</span><span>.NET SignalR</span></div>
+                        <div class="pj__links">
+                            <a href="#" class="pj__link">Demo &nearr;</a>
+                            <a href="#" class="pj__link">GitHub &nearr;</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section class="contact sec" id="contact">
+        <div class="wrap">
+            <span class="sec__tag" data-reveal><span class="sec__num">04</span><span class="sec__line"></span>Kontakt</span>
+            <div class="contact__map" aria-hidden="true">
+                <div class="contact__map-wrap">
+                    <img src="assets/img/map.svg" alt="" class="contact__map-img">
+                    <span class="contact__pin"></span>
+                </div>
+            </div>
+            <div class="contact__row">
+                <div class="contact__left" data-reveal>
+                    <h2 class="sec__h2">Szukasz<br>developera?<br><span class="gr">Porozmawiajmy.</span></h2>
+                    <p class="contact__p">Jestem otwarty na oferty pracy, projekty freelance i długofalową współpracę. Preferuję pracę hybrydową lub zdalną.</p>
+                    <div class="contact__details">
+                        <a href="mailto:pawelbartoszewski@gmail.com" class="contact__d">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 7l-10 7L2 7"/></svg>
+                            pawelbartoszewski@gmail.com
+                        </a>
+                        <span class="contact__d">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Polska &bull; hybrydowo / zdalnie
+                        </span>
+                    </div>
+                    <div class="contact__soc">
+                        <a href="https://github.com/Muniox" class="soc" aria-label="GitHub" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                        <a href="https://www.linkedin.com/in/pawelbartoszewski" class="soc" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
-        <span class="footer__copy">&copy; 2026 Paweł Bartoszewski. Wszelkie prawa zastrzeżone.</span>
-        <div class="footer__links">
-            <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
-                <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </a>
-            <a href="https://linkedin.com/in/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
+        <div class="wrap footer__inner">
+            <span class="footer__c">&copy; 2026 &mdash; Zaprojektowane i zakodowane z pasją</span>
+            <a href="#hero" class="footer__up" aria-label="Do góry"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg></a>
         </div>
     </footer>
 
-    <script src="script.js"></script>
-
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+        integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+        integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d"
+        crossorigin="anonymous"></script>
+    <script defer src="assets/js/script.js"></script>
 </body>
 </html>
