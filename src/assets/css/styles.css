@@ -169,7 +169,6 @@ ul{list-style:none}
 .btn--pr:hover{background:var(--ac-h);transform:translateY(-2px);box-shadow:0 10px 32px rgba(255,51,85,.25)}
 .btn--gh{border:1px solid var(--brd-h);color:var(--tx2);background:var(--bg)}
 .btn--gh:hover{border-color:var(--ac);color:var(--ac);background:var(--bg);transform:translateY(-2px)}
-.btn--full{width:100%;justify-content:center}
 
 .hero__counters{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 .counter{display:flex;align-items:center;gap:10px}
@@ -259,9 +258,6 @@ ul{list-style:none}
 .about__txt .sec__h2{margin-bottom:24px}
 .about__p{color:var(--tx2);font-size:.92rem;margin-bottom:16px;max-width:520px}
 .about__p strong{color:var(--tx);font-weight:600}
-.about__pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.apill{font-family:var(--fm);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;padding:6px 16px;border-radius:100px;border:1px solid var(--brd);color:var(--tx2);transition:all .3s var(--ease)}
-.apill:hover{border-color:var(--ac);color:var(--ac)}
 
 /* Code window */
 .about__photo{width:110px;height:110px;border-radius:50%;object-fit:cover;float:left;
@@ -583,7 +579,6 @@ html.is-switching *::after{
     .hero__btns{flex-direction:row}
     .btn{width:auto;justify-content:initial}
     .stack__grid{grid-template-columns:1fr 1fr}
-    .sc--feat{grid-column:span 2}
 }
 
 /* ── 769px+ ── */
