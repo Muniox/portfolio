@@ -109,9 +109,10 @@
 
     /* ── HERO CARDS — entrance + float ─────── */
     const heroCards = gsap.utils.toArray('.hero__right .fcard, .hero__right .torb');
-    gsap.from(heroCards, {
-        y: 24, opacity: 0, delay: 0.4, duration: 0.6, stagger: 0.08, ease: 'power2.out',
-    });
+    gsap.fromTo(heroCards,
+        { y: 24, opacity: 0 },
+        { y: 0, opacity: 1, delay: 0.4, duration: 0.6, stagger: 0.08, ease: 'power2.out' }
+    );
 
     heroCards.forEach((el, i) => {
         gsap.to(el, {

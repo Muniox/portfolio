@@ -181,6 +181,7 @@ ul{list-style:none}
 /* ─ Right — floating cards composition (hidden on mobile) ─ */
 .hero__right{display:none}
 
+.fcard,.torb{opacity:0}
 .fcard{position:absolute;border-radius:14px;overflow:hidden;
     border:1px solid var(--glass-brd);
     box-shadow:0 24px 80px rgba(0,0,0,.5),0 4px 20px rgba(0,0,0,.3)}
