@@ -18,12 +18,15 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Zbudowanie i wysłanie obrazu
+      - name: Zbudowanie i wysłanie obrazu (wersje PL + EN, nginx serwuje /pl/ i /en/)
         uses: docker/build-push-action@v4
         with:
           context: .
+          file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:${{ github.sha }}
 
   # --- ZADANIE 2: Wdrożenie na VPS ---
   deploy:
@@ -38,20 +41,23 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            # 1. Pobierz najnowszą wersję obrazu
+            # 1. Pobierz najnowszą wersję obrazu (zawiera wersje PL i EN + konfigurację nginx)
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
-            
+
             # 2. Zatrzymaj i usuń stary kontener
             docker stop portfolio-container || true
             docker rm portfolio-container || true
-            
+
             # 3. Uruchom nowy kontener w sieci public_net
-            # Usunięto "-p 3000:80" - NPM połączy się wewnętrznie
+            # nginx w obrazie przekierowuje "/" -> "/pl/" (domyślnie) lub "/en/" (gdy Accept-Language zaczyna się od "en")
+            # Strony są dostępne pod adresami:
+            #   https://pbartoszewski.pl/pl/index.html
+            #   https://pbartoszewski.pl/en/index.html
             docker run -d \
               --network public_net \
               --name portfolio-container \
               --restart unless-stopped \
               ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
-            
+
             # 4. Posprzątaj stare obrazy
             docker image prune -f
