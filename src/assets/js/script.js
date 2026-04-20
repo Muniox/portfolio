@@ -27,11 +27,11 @@
 
     if (!localStorage.getItem(COOKIE_NOTICE_KEY)) {
         const TXT = pageLang === 'en' ? {
-            msg: 'We use a single functional cookie to remember your chosen language. No tracking or analytics cookies are used.',
+            msg: 'This site uses a single functional cookie to remember your chosen language. No tracking or analytics cookies are used.',
             btn: 'Got it',
             label: 'Cookie notice',
         } : {
-            msg: 'Używamy jednego funkcjonalnego ciasteczka do zapamiętania wybranego języka. Nie stosujemy ciasteczek śledzących ani analitycznych.',
+            msg: 'Ta strona używa jednego funkcjonalnego ciasteczka do zapamiętania wybranego języka. Nie stosuje ciasteczek śledzących ani analitycznych.',
             btn: 'Rozumiem',
             label: 'Informacja o ciasteczkach',
         };
