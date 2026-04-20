@@ -6,6 +6,54 @@
 
     gsap.registerPlugin(ScrollTrigger);
 
+    /* ── LANGUAGE PREFERENCE (cookie + info notice) ─── */
+    const LANG_COOKIE = 'lang';
+    const COOKIE_NOTICE_KEY = 'portfolio-cookie-notice';
+    const pageLang = document.documentElement.lang === 'en' ? 'en' : 'pl';
+
+    function setLangCookie(v) {
+        const secure = location.protocol === 'https:' ? '; Secure' : '';
+        document.cookie = `${LANG_COOKIE}=${v}; path=/; max-age=31536000; SameSite=Lax${secure}`;
+    }
+
+    document.querySelectorAll('.lang-switch__btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const val = btn.getAttribute('hreflang');
+            if (val === 'pl' || val === 'en') setLangCookie(val);
+        });
+    });
+
+    setLangCookie(pageLang);
+
+    if (!localStorage.getItem(COOKIE_NOTICE_KEY)) {
+        const TXT = pageLang === 'en' ? {
+            msg: 'We use a single functional cookie to remember your chosen language. No tracking or analytics cookies are used.',
+            btn: 'Got it',
+            label: 'Cookie notice',
+        } : {
+            msg: 'Używamy jednego funkcjonalnego ciasteczka do zapamiętania wybranego języka. Nie stosujemy ciasteczek śledzących ani analitycznych.',
+            btn: 'Rozumiem',
+            label: 'Informacja o ciasteczkach',
+        };
+
+        const banner = document.createElement('div');
+        banner.className = 'cookie-notice';
+        banner.setAttribute('role', 'dialog');
+        banner.setAttribute('aria-label', TXT.label);
+        banner.innerHTML = `
+            <p class="cookie-notice__msg">${TXT.msg}</p>
+            <button class="cookie-notice__btn" type="button">${TXT.btn}</button>
+        `;
+        document.body.appendChild(banner);
+        requestAnimationFrame(() => banner.classList.add('is-visible'));
+
+        banner.querySelector('.cookie-notice__btn').addEventListener('click', () => {
+            localStorage.setItem(COOKIE_NOTICE_KEY, '1');
+            banner.classList.remove('is-visible');
+            setTimeout(() => banner.remove(), 320);
+        });
+    }
+
     /* ── THEME TOGGLE ──────────────────────── */
     const THEME_KEY = 'portfolio-theme';
     const html = document.documentElement;
