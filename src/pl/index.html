@@ -58,8 +58,7 @@
       UWAGA: poniższy inline <script> jest dopuszczony w CSP przez hash SHA-256
       w nginx.conf (dyrektywa script-src). JAKAKOLWIEK zmiana zawartości skryptu
       (łącznie z białymi znakami) unieważnia hash i złamie ładowanie motywu.
-      Po edycji przelicz hash:
-        node -e "console.log('sha256-'+require('crypto').createHash('sha256').update(require('fs').readFileSync('src/pl/index.html','utf8').match(/<script>\n([\s\S]*?)\n    <\/script>/)[1]).digest('base64'))"
+      Po edycji przelicz hash skryptem: node scripts/compute-csp-hash.js
       i zaktualizuj CSP w nginx.conf. Skrypt musi być identyczny w src/pl i src/en.
     -->
     <script>
