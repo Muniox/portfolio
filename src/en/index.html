@@ -54,6 +54,14 @@
     <link rel="preload" href="../assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/bricolage-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../assets/fonts/fonts.css">
+    <!--
+      NOTE: the inline <script> below is whitelisted in CSP via a SHA-256 hash
+      in nginx.conf (script-src directive). ANY change to the script content
+      (including whitespace) invalidates the hash and breaks theme loading.
+      After editing, recompute the hash:
+        node -e "console.log('sha256-'+require('crypto').createHash('sha256').update(require('fs').readFileSync('src/en/index.html','utf8').match(/<script>\n([\s\S]*?)\n    <\/script>/)[1]).digest('base64'))"
+      and update the CSP in nginx.conf. The script must be identical in src/pl and src/en.
+    -->
     <script>
         (function () {
             const theme = localStorage.getItem('portfolio-theme');
