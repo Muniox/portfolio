@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Blokada botów SEO/scraperów (obciążają serwer, brak wartości dla portfolio)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+Sitemap: https://pbartoszewski.pl/sitemap.xml
