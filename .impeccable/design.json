@@ -1,0 +1,352 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30T19:26:31.907Z",
+  "title": "Design System: Paweł Bartoszewski — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "signal-red": {
+        "role": "primary",
+        "displayName": "Signal Red",
+        "canonical": "#ff3355",
+        "tonalRamp": [
+          "oklch(18% 0.07 17)",
+          "oklch(28% 0.11 17)",
+          "oklch(40% 0.16 17)",
+          "oklch(52% 0.21 17)",
+          "oklch(64% 0.24 17)",
+          "oklch(74% 0.18 17)",
+          "oklch(85% 0.10 17)",
+          "oklch(95% 0.03 17)"
+        ]
+      },
+      "electric-violet": {
+        "role": "secondary",
+        "displayName": "Electric Violet",
+        "canonical": "#7c5cfc",
+        "tonalRamp": [
+          "oklch(18% 0.08 285)",
+          "oklch(28% 0.13 285)",
+          "oklch(40% 0.18 285)",
+          "oklch(50% 0.22 285)",
+          "oklch(59% 0.23 285)",
+          "oklch(70% 0.17 285)",
+          "oklch(83% 0.09 285)",
+          "oklch(95% 0.03 285)"
+        ]
+      },
+      "build-mint": {
+        "role": "tertiary",
+        "displayName": "Build Mint",
+        "canonical": "#00ddb0",
+        "tonalRamp": [
+          "oklch(18% 0.04 172)",
+          "oklch(30% 0.07 172)",
+          "oklch(42% 0.10 172)",
+          "oklch(55% 0.13 172)",
+          "oklch(68% 0.15 172)",
+          "oklch(80% 0.16 172)",
+          "oklch(88% 0.10 172)",
+          "oklch(96% 0.04 172)"
+        ]
+      },
+      "midnight-ink": {
+        "role": "neutral",
+        "displayName": "Midnight Ink",
+        "canonical": "#07070d",
+        "tonalRamp": [
+          "oklch(12% 0.012 285)",
+          "oklch(16% 0.02 285)",
+          "oklch(20% 0.03 285)",
+          "oklch(26% 0.04 285)",
+          "oklch(40% 0.04 285)",
+          "oklch(60% 0.03 285)",
+          "oklch(80% 0.015 285)",
+          "oklch(95% 0.005 285)"
+        ]
+      },
+      "card-ink": {
+        "role": "neutral",
+        "displayName": "Card Ink",
+        "canonical": "#121220"
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#1a1a30"
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "#28284a"
+      },
+      "bone": {
+        "role": "neutral",
+        "displayName": "Bone",
+        "canonical": "#eceae4"
+      },
+      "ash": {
+        "role": "neutral",
+        "displayName": "Ash",
+        "canonical": "#8b8ba0"
+      },
+      "faint-slate": {
+        "role": "neutral",
+        "displayName": "Faint Slate",
+        "canonical": "#50506a"
+      },
+      "blanc-paper": {
+        "role": "neutral",
+        "displayName": "Blanc Paper (light ground)",
+        "canonical": "#f5f3ef"
+      },
+      "blanc-ink": {
+        "role": "neutral",
+        "displayName": "Blanc Ink (light text)",
+        "canonical": "#181614"
+      },
+      "blanc-red": {
+        "role": "primary",
+        "displayName": "Blanc Red (light action)",
+        "canonical": "#d4193a"
+      },
+      "blanc-violet": {
+        "role": "secondary",
+        "displayName": "Blanc Violet",
+        "canonical": "#5b3fd4"
+      },
+      "blanc-mint": {
+        "role": "tertiary",
+        "displayName": "Blanc Mint",
+        "canonical": "#008a6e"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Stacked name in the hero only; second line carries the red→violet gradient."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings with at most one gradient keyword."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project card titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraph prose in Ash with Bone strong emphasis."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Mono uppercase labels: nav, buttons, section tags, pills, chips."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Syntax-colored code in editor windows and the terminal."
+      }
+    },
+    "shadows": [
+      {
+        "name": "float",
+        "value": "0 24px 80px rgba(0,0,0,.5), 0 4px 20px rgba(0,0,0,.3)",
+        "purpose": "Hero glass code, terminal and status cards."
+      },
+      {
+        "name": "orb",
+        "value": "0 8px 30px rgba(0,0,0,.4)",
+        "purpose": "Floating tech-logo tiles."
+      },
+      {
+        "name": "lift",
+        "value": "0 28px 72px rgba(0,0,0,.4)",
+        "purpose": "Project card on hover."
+      },
+      {
+        "name": "mockup",
+        "value": "0 12px 40px rgba(0,0,0,.4)",
+        "purpose": "Mini UI mockups in project visuals."
+      },
+      {
+        "name": "red-glow",
+        "value": "0 10px 32px rgba(255,51,85,.25)",
+        "purpose": "Primary button hover."
+      },
+      {
+        "name": "blanc-float",
+        "value": "0 24px 80px rgba(24,22,20,.1), 0 4px 20px rgba(24,22,20,.07)",
+        "purpose": "Code Blanc version of float."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-expo-out",
+        "value": "cubic-bezier(.19,1,.22,1)",
+        "purpose": "All interaction transitions, 0.3–0.55s."
+      },
+      {
+        "name": "reveal",
+        "value": "GSAP from {y:32, opacity:0}, 0.8s power2.out, ScrollTrigger top 88%, once",
+        "purpose": "Scroll-triggered section reveals."
+      },
+      {
+        "name": "hero-float",
+        "value": "GSAP yoyo y:-(14..22)px, 1.8–2.8s sine.inOut, infinite",
+        "purpose": "Ambient bob of hero cards and orbs."
+      },
+      {
+        "name": "pulse",
+        "value": "2s ease-in-out infinite, opacity 1→.4, scale 1→.75",
+        "purpose": "Status dots."
+      },
+      {
+        "name": "theme-switch",
+        "value": "background/border/color/box-shadow .35s ease",
+        "purpose": "Applied only during a theme change via html.is-switching."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "481px"
+      },
+      {
+        "name": "stack-compact",
+        "value": "720px (max-width)"
+      },
+      {
+        "name": "md",
+        "value": "769px"
+      },
+      {
+        "name": "lg",
+        "value": "1025px"
+      },
+      {
+        "name": "xl",
+        "value": "1101px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Signal Red pill for the main call to action; lifts with a red glow.",
+      "html": "<a class=\"ds-btn-pr\" href=\"#\"><span>Projekty</span><svg width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"M1 15L15 1M15 1H4M15 1v11\"/></svg></a>",
+      "css": ".ds-btn-pr{display:inline-flex;align-items:center;gap:8px;font-family:'Fira Code',monospace;font-size:.78rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;padding:13px 30px;border-radius:100px;background:#ff3355;color:#fff;text-decoration:none;transition:all .35s cubic-bezier(.19,1,.22,1)}.ds-btn-pr:hover{background:#ff4d6a;transform:translateY(-2px);box-shadow:0 10px 32px rgba(255,51,85,.25)}.ds-btn-pr:focus-visible{outline:2px solid #ff3355;outline-offset:3px}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary pill with a hairline border; turns red on hover.",
+      "html": "<a class=\"ds-btn-gh\" href=\"#\">Współpraca</a>",
+      "css": ".ds-btn-gh{display:inline-flex;align-items:center;font-family:'Fira Code',monospace;font-size:.78rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;padding:13px 30px;border-radius:100px;border:1px solid #28284a;background:#07070d;color:#8b8ba0;text-decoration:none;transition:all .35s cubic-bezier(.19,1,.22,1)}.ds-btn-gh:hover{border-color:#ff3355;color:#ff3355;transform:translateY(-2px)}.ds-btn-gh:focus-visible{outline:2px solid #ff3355;outline-offset:3px}"
+    },
+    {
+      "name": "Status Pill",
+      "kind": "chip",
+      "refersTo": "status-pill",
+      "description": "Build Mint availability pill with a pulsing dot.",
+      "html": "<div class=\"ds-pill\"><span class=\"ds-pill__dot\"></span>Dostępny do współpracy</div>",
+      "css": ".ds-pill{display:inline-flex;align-items:center;gap:10px;font-family:'Fira Code',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#00ddb0;padding:7px 18px;border:1px solid rgba(0,221,176,.2);border-radius:100px;background:rgba(0,221,176,.04)}.ds-pill__dot{width:7px;height:7px;background:#00ddb0;border-radius:50%;animation:ds-pulse 2s ease-in-out infinite}@keyframes ds-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Corner-bracket wordmark with mono uppercase links and a growing red underline.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-logo\" href=\"#\"><span class=\"ds-cn ds-cn--tl\"></span>PBartoszewski<span class=\"ds-cn ds-cn--br\"></span></a><div class=\"ds-links\"><a href=\"#\">O mnie</a><a href=\"#\">Stack</a><a href=\"#\">Projekty</a><a href=\"#\">Kontakt</a></div></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:32px;padding:16px 24px;background:rgba(7,7,13,.85);backdrop-filter:blur(18px) saturate(180%);box-shadow:0 1px 0 #1a1a30}.ds-logo{position:relative;display:inline-flex;padding:.42em .62em;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:-.035em;color:#fff;text-decoration:none;line-height:1}.ds-cn{position:absolute;width:.5em;height:.5em;border:0 solid;transition:transform .45s cubic-bezier(.19,1,.22,1)}.ds-cn--tl{top:0;left:0;border-top-width:2px;border-left-width:2px;border-color:#ff3355}.ds-cn--br{bottom:0;right:0;border-bottom-width:2px;border-right-width:2px;border-color:#7c5cfc}.ds-logo:hover .ds-cn--tl{transform:translate(-.16em,-.16em)}.ds-logo:hover .ds-cn--br{transform:translate(.16em,.16em)}.ds-links{display:flex;gap:32px;margin-left:auto}.ds-links a{position:relative;font-family:'Fira Code',monospace;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#8b8ba0;text-decoration:none;transition:color .3s}.ds-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#ff3355;transition:width .35s cubic-bezier(.19,1,.22,1)}.ds-links a:hover{color:#eceae4}.ds-links a:hover::after{width:100%}.ds-links a:focus-visible{outline:2px solid #ff3355;outline-offset:4px}"
+    },
+    {
+      "name": "Code Window",
+      "kind": "custom",
+      "refersTo": "code-window",
+      "description": "Signature editor window with traffic-light chrome and syntax colors.",
+      "html": "<div class=\"ds-cw\"><div class=\"ds-cw__bar\"><i style=\"background:#ff5f57\"></i><i style=\"background:#febc2e\"></i><i style=\"background:#28c840\"></i><span>dashboard.component.ts</span></div><pre class=\"ds-cw__code\"><span class=\"k\">export class</span> <span class=\"t\">DashboardComponent</span> {\n  <span class=\"k\">private readonly</span> api = <span class=\"f\">inject</span>(<span class=\"t\">ApiService</span>);\n  data$ = <span class=\"k\">this</span>.api.<span class=\"f\">getAll</span>();\n}</pre></div>",
+      "css": ".ds-cw{background:rgba(14,14,26,.88);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5),0 4px 20px rgba(0,0,0,.3);max-width:380px}.ds-cw__bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.05)}.ds-cw__bar i{width:9px;height:9px;border-radius:50%}.ds-cw__bar span{margin-left:auto;font-family:'Fira Code',monospace;font-size:.62rem;color:#50506a}.ds-cw__code{margin:0;padding:16px 18px;font-family:'Fira Code',monospace;font-size:.68rem;line-height:1.75;color:#8b8ba0;white-space:pre}.ds-cw__code .k{color:#ff6b8a}.ds-cw__code .t{color:#ffd666}.ds-cw__code .f{color:#56d8c0}"
+    },
+    {
+      "name": "Tech Stack Tile",
+      "kind": "card",
+      "refersTo": "stack-tile",
+      "description": "Frosted-glass stack tile that lifts and takes on the technology's own brand color on hover, set inside a category panel with a color field.",
+      "html": "<div class=\"ds-panel\" style=\"--cat:#ff3355\"><div class=\"ds-tile\" style=\"--col:#dd304f\"><span class=\"ds-bk ds-bk--tl\"></span><span class=\"ds-bk ds-bk--br\"></span><div class=\"ds-tile__logo\">A</div><div class=\"ds-tile__name\">Angular</div><div class=\"ds-tile__kind\">framework</div></div></div>",
+      "css": ".ds-panel{position:relative;overflow:hidden;isolation:isolate;padding:28px;border-radius:20px;border:1px solid color-mix(in srgb,var(--cat) 22%,#1a1a30);background:#0e0e18}.ds-panel::before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(75% 95% at 0% 0%,color-mix(in srgb,var(--cat) 25%,transparent),transparent 70%)}.ds-tile{position:relative;overflow:hidden;width:180px;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:22px 14px 18px;border:1px solid rgba(255,255,255,.06);border-radius:12px;background:color-mix(in srgb,#121220 58%,transparent);backdrop-filter:blur(14px) saturate(140%);box-shadow:0 16px 40px -20px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,.04);transition:transform .5s cubic-bezier(.19,1,.22,1),border-color .45s cubic-bezier(.19,1,.22,1),box-shadow .5s cubic-bezier(.19,1,.22,1)}.ds-tile::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,var(--col) 0%,transparent 64%);opacity:0;transition:opacity .55s cubic-bezier(.19,1,.22,1)}.ds-tile:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--col) 50%,rgba(255,255,255,.06));box-shadow:0 26px 50px -22px color-mix(in srgb,var(--col) 55%,rgba(0,0,0,.6))}.ds-tile:hover::before{opacity:.15}.ds-bk{position:absolute;width:12px;height:12px;border:1.5px solid var(--col);opacity:0;transition:opacity .4s cubic-bezier(.19,1,.22,1),transform .4s cubic-bezier(.19,1,.22,1)}.ds-bk--tl{top:10px;left:10px;border-right:none;border-bottom:none;transform:translate(5px,5px)}.ds-bk--br{bottom:10px;right:10px;border-left:none;border-top:none;transform:translate(-5px,-5px)}.ds-tile:hover .ds-bk{opacity:1;transform:none}.ds-tile__logo{position:relative;z-index:1;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:2.4rem;color:var(--col)}.ds-tile__name{position:relative;z-index:1;font-family:'Fira Code',monospace;font-size:.82rem;font-weight:500;color:#eceae4}.ds-tile__kind{position:relative;z-index:1;font-family:'Fira Code',monospace;font-size:.56rem;color:#8b8ba0;letter-spacing:.2em;text-transform:uppercase;padding:3px 9px;border:1px solid #28284a;border-radius:999px;transition:all .4s cubic-bezier(.19,1,.22,1)}.ds-tile:hover .ds-tile__kind{color:var(--col);border-color:var(--col)}"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Card Ink project card that lifts with a deep shadow on hover.",
+      "html": "<article class=\"ds-pj\"><div class=\"ds-pj__visual\"></div><div class=\"ds-pj__body\"><span class=\"ds-pj__n\">01</span><h3 class=\"ds-pj__title\">Project title</h3><p class=\"ds-pj__desc\">Short description of the project and what it does.</p><div class=\"ds-pj__tags\"><span>Angular</span><span>.NET</span></div></div></article>",
+      "css": ".ds-pj{max-width:360px;background:#121220;border:1px solid #1a1a30;border-radius:16px;overflow:hidden;transition:all .45s cubic-bezier(.19,1,.22,1)}.ds-pj:hover{border-color:#28284a;transform:translateY(-8px);box-shadow:0 28px 72px rgba(0,0,0,.4)}.ds-pj__visual{height:160px;background:linear-gradient(160deg,#0d0a1e 0%,#0a1a30 50%,#081a18 100%)}.ds-pj__body{padding:24px 28px 28px}.ds-pj__n{display:block;margin-bottom:6px;font-family:'Fira Code',monospace;font-size:.65rem;color:#ff3355;letter-spacing:.06em}.ds-pj__title{margin:0 0 10px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.2rem;letter-spacing:-.01em;color:#eceae4}.ds-pj__desc{margin:0 0 16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;line-height:1.6;color:#8b8ba0}.ds-pj__tags{display:flex;flex-wrap:wrap;gap:6px}.ds-pj__tags span{font-family:'Fira Code',monospace;font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;padding:4px 10px;border-radius:100px;border:1px solid #1a1a30;color:#50506a}"
+    },
+    {
+      "name": "Social Button",
+      "kind": "button",
+      "refersTo": "social-button",
+      "description": "42px outlined tile for GitHub/LinkedIn that lifts and turns red.",
+      "html": "<a class=\"ds-soc\" href=\"#\" aria-label=\"GitHub\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.8-.26.8-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.31.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.69.8.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z\"/></svg></a>",
+      "css": ".ds-soc{width:42px;height:42px;border-radius:12px;border:1px solid #1a1a30;display:flex;align-items:center;justify-content:center;color:#50506a;transition:all .3s cubic-bezier(.19,1,.22,1)}.ds-soc:hover{border-color:#ff3355;color:#ff3355;background:rgba(255,51,85,.06);transform:translateY(-3px)}.ds-soc:focus-visible{outline:2px solid #ff3355;outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Code Noir",
+    "overview": "Code Noir is a code editor at night, turned into a stage. The ground is near-black ink with a faint violet cast, a fine noise grain over everything, and a grid that glows out of the dark behind the hero. On that ground, editor artifacts float: glass code windows with traffic-light chrome, a terminal, a green \"Build Passed\" badge, tech-logo tiles bobbing on their own sine loops. Heat comes from a single red-to-violet gradient that runs through the surname, section keywords and blurred orbs; a mint signal marks anything that is live or passing.\n\nThe system is expressive by intent. Components are allowed to show off: glass, glow, lift, floating motion, corner brackets that snap in, logos that brighten into their own brand color. That expressiveness is the proof of craft for a developer whose site is itself a work sample, but it always sits on a strict typographic skeleton of Bricolage Grotesque headlines, Plus Jakarta Sans prose and Fira Code labels. Density is comfortable, never crowded; sections breathe with very large vertical padding.\n\nCode Blanc is the daytime twin, not a separate brand: warm paper instead of ink, darker and more saturated versions of the same red, violet and mint, warm-tinted low-opacity shadows, and a multiplied noise grain. Every rule below applies to both themes through the same custom properties.",
+    "keyCharacteristics": [
+      "Near-black violet-cast ground with noise grain and a masked hero grid",
+      "One red→violet gradient (135°) as the signature heat; mint reserved for \"live / passing\"",
+      "Editor-world props: code windows, terminal, syntax-colored code, file-name tabs, <tag/> labels",
+      "Layered glass and ambient shadow as a recurring material",
+      "Mono uppercase labels everywhere small text needs authority",
+      "Expo-out easing on every interaction, sine-float ambient motion in the hero"
+    ],
+    "rules": [
+      {
+        "name": "The One Gradient Rule",
+        "body": "There is exactly one gradient voice: Signal Red → Electric Violet at 135°. Headings get one gradient word at most; never introduce a second gradient pairing.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mint Means Live Rule",
+        "body": "Build Mint marks status (available, passing, live). It is never a decorative accent or a button color.",
+        "section": "colors"
+      },
+      {
+        "name": "The Brand-Color Tile Rule",
+        "body": "Tech tiles light up in the technology's own brand color (--col) on hover, never in the site accent. The site's palette frames the logos; the logos bring their own color.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono Authority Rule",
+        "body": "Any label, tag, number prefix, button or meta line under ~0.8rem is Fira Code, usually uppercase and tracked. Plus Jakarta Sans is for sentences only.",
+        "section": "typography"
+      },
+      {
+        "name": "The Glass Over Grain Rule",
+        "body": "Glass surfaces only work because something textured sits behind them (grid, orb, noise). Never put a glass card on a flat, empty field.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do drive every color through the :root / [data-theme=\"light\"] custom properties so Code Noir and Code Blanc stay in lockstep.",
+      "Do use cubic-bezier(.19,1,.22,1) for interaction transitions (0.3–0.55s) and GSAP power2.out for reveals.",
+      "Do keep small labels in Fira Code, uppercase, tracked 0.06–0.22em.",
+      "Do give each section heading at most one gradient word.",
+      "Do put glass and floating cards over a textured backdrop (grid, orbs, noise).",
+      "Do give tech tiles their own brand color via --col and categories their accent via --cat.",
+      "Do tone shadows down and warm-tint them in Code Blanc (rgba(24,22,20,…))."
+    ],
+    "donts": [
+      "Don't introduce a second gradient pairing or new accent hues outside the red / violet / mint triad.",
+      "Don't use Build Mint for buttons or decoration; it only means live / passing.",
+      "Don't use pure white (#fff) for body text in Code Noir; text is Bone.",
+      "Don't load fonts or assets from third-party origins; the production CSP only allows 'self' (GSAP from jsDelivr is the single exception).",
+      "Don't present placeholder projects as real work or invent project details, metrics or links."
+    ]
+  }
+}
