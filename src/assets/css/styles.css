@@ -318,7 +318,7 @@ ul{list-style:none}
 
 /* ── SKILLS — System architecture ─────────── */
 /* Stack jako warstwy, przez które przechodzi żądanie: frontend → (REST/SignalR) → backend → (sql) → data.
-   DevOps to szyna biegnąca wzdłuż wszystkich warstw. Kafelki świecą kolorem danej technologii (--col). */
+   DevOps to kolumna obok wszystkich warstw. Kafelki świecą kolorem danej technologii (--col). */
 .skills{overflow-x:clip;position:relative}
 .stack{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
 .stack::before{content:'';position:absolute;inset:-64px -40px;z-index:0;pointer-events:none;
@@ -336,20 +336,17 @@ ul{list-style:none}
 .stack__layers{position:relative;z-index:1;display:flex;flex-direction:column;min-width:0}
 
 /* Warstwa */
-.stack__layer{position:relative;display:flex;flex-direction:column;gap:18px;padding:20px;
+.stack__layer,.stack__ops{position:relative;display:flex;flex-direction:column;gap:18px;padding:20px;
     border:1px solid var(--brd);border-radius:14px;
     background:radial-gradient(120% 170% at 0% 0%,color-mix(in srgb,var(--cat) 13%,transparent),transparent 55%),
                color-mix(in srgb,var(--card) 72%,transparent);
     -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
     box-shadow:0 28px 64px -32px rgba(0,0,0,.75)}
-.stack__layer::before,.stack__layer::after{content:'';position:absolute;width:18px;height:18px;border:0 solid var(--cat);pointer-events:none}
-.stack__layer::before{top:-1px;left:-1px;border-top-width:2px;border-left-width:2px;border-top-left-radius:14px}
-.stack__layer::after{bottom:-1px;right:-1px;border-bottom-width:2px;border-right-width:2px;border-bottom-right-radius:14px}
 .stack__head{display:flex;align-items:flex-end;gap:14px;min-width:0}
 .stack__num{flex-shrink:0;font-family:var(--fd);font-weight:700;font-size:2.6rem;line-height:.8;letter-spacing:-.06em;
     color:transparent;-webkit-text-stroke:1.5px var(--cat)}
 .stack__head-lt{display:flex;flex-direction:column;gap:7px;min-width:0;padding-bottom:1px}
-.stack__tag{font-family:var(--fm);font-weight:500;font-size:1rem;line-height:1;color:var(--tx);text-transform:lowercase}
+.stack__tag{font-family:var(--fm);font-weight:500;font-size:1rem;line-height:1;color:var(--tx);text-transform:lowercase;font-variant-ligatures:none}
 .stack__tag::before{content:'<';color:var(--cat);margin-right:1px;font-weight:400}
 .stack__tag::after{content:'/>';color:var(--cat);margin-left:1px;font-weight:400}
 .stack__meta{font-family:var(--fm);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--tx2);line-height:1.4}
@@ -412,15 +409,7 @@ ul{list-style:none}
     color:var(--tx2);padding:6px 14px;border:1px dashed var(--brd-h);border-radius:999px;background:var(--bg)}
 
 /* Szyna DevOps */
-.stack__ops{position:relative;z-index:1;display:flex;flex-direction:column;gap:18px;padding:20px;
-    border:1px dashed color-mix(in srgb,var(--cat) 45%,var(--brd-h));border-radius:14px;
-    background:linear-gradient(180deg,color-mix(in srgb,var(--cat) 8%,transparent),transparent 75%),
-               color-mix(in srgb,var(--card) 55%,transparent);
-    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
-.stack__pipe{position:absolute;left:-1px;top:16px;bottom:16px;width:2px;overflow:hidden}
-.stack__pipe::before{content:'';position:absolute;left:0;right:0;top:0;height:38%;
-    background:linear-gradient(180deg,transparent,var(--cat),transparent);animation:stack-scan 3.4s linear infinite}
-@keyframes stack-scan{from{transform:translateY(-100%)}to{transform:translateY(260%)}}
+.stack__ops{z-index:1}
 .stack__ops .stack__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 
 @media(max-width:480px){
@@ -437,7 +426,7 @@ ul{list-style:none}
     .stack__ops .stack__head{flex-direction:column;align-items:flex-start;gap:12px}
 }
 @media(prefers-reduced-motion:reduce){
-    .stack__pk,.stack__pipe::before{animation:none;opacity:0}
+    .stack__pk{animation:none;opacity:0}
 }
 
 /* ── PROJECTS ────────────────────────────── */
@@ -597,7 +586,7 @@ html.is-switching *::after{
 
 /* Tech stack — architecture on paper for light mode */
 [data-theme="light"] .stack__num{-webkit-text-stroke-width:2px}
-[data-theme="light"] .stack__layer{box-shadow:0 28px 64px -36px rgba(24,22,20,.22)}
+[data-theme="light"] .stack__layer,[data-theme="light"] .stack__ops{box-shadow:0 28px 64px -36px rgba(24,22,20,.22)}
 [data-theme="light"] .stack__tile,
 [data-theme="light"] .stack__via,
 [data-theme="light"] .stack__proto{background:#fff}
