@@ -71,7 +71,6 @@ rounded:
   md: "12px"
   lg: "14px"
   xl: "16px"
-  panel: "20px"
   pill: "999px"
 spacing:
   gutter: "clamp(20px, 5vw, 48px)"
@@ -110,15 +109,20 @@ components:
     backgroundColor: "{colors.card-ink}"
     rounded: "{rounded.xl}"
     padding: "24px 28px 28px"
-  stack-panel:
-    backgroundColor: "{colors.ink-raised}"
-    rounded: "{rounded.panel}"
-    padding: "clamp(18px, 2.4vw, 30px)"
-  stack-tile:
+  stack-layer:
     backgroundColor: "{colors.card-ink}"
+    rounded: "{rounded.lg}"
+    padding: "20px"
+  stack-tile:
+    backgroundColor: "{colors.midnight-ink}"
     textColor: "{colors.bone}"
-    rounded: "{rounded.md}"
-    padding: "22px 14px 18px"
+    rounded: "4px"
+    padding: "16px 18px"
+  stack-via:
+    backgroundColor: "{colors.midnight-ink}"
+    textColor: "{colors.bone}"
+    rounded: "{rounded.pill}"
+    padding: "6px 16px 6px 6px"
   tech-orb:
     rounded: "{rounded.xl}"
     size: "56px"
@@ -162,7 +166,7 @@ A dark, violet-leaning neutral ramp carrying three saturated signals: red for ac
 - **Build Mint** (`build-mint`): the status color. The "available for work" pill and its pulsing dot, the "Build Passed" badge, the DevOps category, hero orb C. It means "live, passing, open".
 
 ### Neutral
-- **Midnight Ink** (`midnight-ink`): page ground and ghost-button fill.
+- **Midnight Ink** (`midnight-ink`): page ground, ghost-button fill, stack-tile fill.
 - **Ink Raised** (`ink-raised`) / **Card Ink** (`card-ink`) / **Card Ink Hover** (`card-ink-hover`): tonal steps for raised surfaces, code windows and project cards.
 - **Hairline** (`hairline`) / **Hairline Strong** (`hairline-strong`): 1px borders, dividers, the stack grid gutters, toggle track.
 - **Bone** (`bone`): primary text and strong inline emphasis; warm off-white rather than pure white.
@@ -208,7 +212,7 @@ Mobile-first single column that opens into two-column splits. Content sits in a 
 
 Breakpoints: 481px (buttons go inline, stack grid to two columns), 720px (stack header compacts, below), 769px (desktop nav, hero composition appears, map globe appears), 1025px (about, projects and contact become two-column; code window turns sticky), 1101px (hero splits 1fr/1fr with the full-size floating composition).
 
-The hero is full-viewport with a text column on the left and an absolutely positioned floating-card composition on the right; it fades into the next section with an 80–200px masked gradient. The stack section is a glass bento: from 1025px frontend (7fr) and devops (5fr) share the first row and backend spans the second; below that the panels stack. Inside each panel the first technology is a featured tile (a tall first column from 769px, full width below) and the last tile stretches to close its row.
+The hero is full-viewport with a text column on the left and an absolutely positioned floating-card composition on the right; it fades into the next section with an 80–200px masked gradient. The stack section is a system-architecture diagram: frontend, backend and data layers stack vertically, joined by "wires" (REST API and SignalR between frontend and backend, an "sql" link to data). From 1025px a 210px DevOps rail runs down the right beside all three layers; below that it follows the data layer. The whole diagram sits on a masked 48px grid.
 
 ## Elevation & Depth
 
@@ -228,7 +232,7 @@ Depth is layered throughout. The ground itself has three planes (noise grain on 
 
 ## Shapes
 
-Two corner families coexist on purpose. Soft: pills (999px) for buttons, tags, toggles and status; 14–16px for cards, code windows and orbs; 12px for social tiles; 8px for mockups. 20px for the tech-stack panels, with 12px glass tiles inside. L-shaped corner brackets (the logo's `logo__cn` marks and the tiles' `stack__bk`) frame content like a viewfinder. Circles are reserved for status dots, the portrait and the footer back-to-top button.
+Two corner families coexist on purpose. Soft: pills (999px) for buttons, tags, toggles and status; 14–16px for cards, code windows and orbs; 12px for social tiles; 8px for mockups. 4px for the tech-stack tiles. L-shaped corner brackets (including the 2px accent corners on the stack layers) (the logo's `logo__cn` marks and the tiles' `stack__bk`) frame content like a viewfinder. Circles are reserved for status dots, the portrait and the footer back-to-top button.
 
 ## Components
 
@@ -248,8 +252,8 @@ Fixed 64/72px bar, transparent at the top, frosted (`blur(18px) saturate(180%)`,
 ### Code Window (signature)
 The system's recurring artifact: a 14px-radius card with a traffic-light title bar, a file name in Faint Slate on the right, and syntax-colored Fira Code. In the hero it is glass and floating; in About it is solid Card Ink and sticky beside the text.
 
-### Tech Stack Bento (signature)
-Each discipline is a 20px panel on Ink Raised with its own color field: a radial wash of its category accent (`--cat`, 25% top-left, 10% bottom-right) and a 32px grid that fades out from the top-left corner. The header holds the outlined number, the `<tag/>` label with meta line, and a count pill. Tiles are 12px frosted glass (58% Card Ink, `blur(14px) saturate(140%)`) holding a logo (slightly desaturated at rest), a mono name and a pill "kind" chip. The featured tile (Angular, .NET) gets a 76px logo and a Bricolage name. On hover a tile lifts 4px, its border and shadow take the technology's own color (`--col`), a radial glow fades in, corner brackets slide into place, the logo returns to full color at 1.08 scale, and the chip takes the brand color. In Code Blanc the glass is 72% white with warm shadows.
+### Tech Stack Architecture (signature)
+The stack is drawn as the path a request takes. Each layer is a 14px glass card (72% Card Ink, `blur(12px)`) with a 13% radial wash of its accent (`--cat`) from the top-left and 2px accent corner marks at top-left and bottom-right. Its header has the outlined number, the `<tag/>` label and a meta line. Tiles are horizontal (logo, then mono name over a "kind" label) on Midnight Ink with 4px corners; the backend's .NET and EF Core tiles use a Bricolage name. Between layers, two dashed channels carry animated packets: red going down (request), violet going up (response), explained by a legend above the diagram. Transport technologies (REST API, SignalR) sit on the wire as pill chips. The DevOps rail has a dashed mint border with a mint highlight sweeping down its left edge. On hover a tile's background lifts to Card Ink, a radial glow in the technology's own color (`--col`) fades in, corner brackets slide into place, a 2px bottom bar wipes in, and the logo returns to full color. Animation stops under `prefers-reduced-motion`. In Code Blanc the tiles and chips are white and the layer shadows are warm and soft.
 
 ### Cards / Containers (Project Card)
 - **Corner Style:** 16px.
