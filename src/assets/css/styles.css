@@ -89,10 +89,17 @@ ul{list-style:none}
 /* ── NAV ─────────────────────────────────── */
 .nav{position:fixed;top:0;left:0;width:100%;height:var(--nh);z-index:1000;transition:background .4s,backdrop-filter .4s,box-shadow .4s}
 .nav.scrolled{background:var(--nav-scrolled-bg);backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);box-shadow:0 1px 0 var(--brd)}
-.nav__wrap{max-width:1200px;margin:0 auto;height:100%;padding:0 clamp(20px,5vw,48px);display:flex;align-items:center;gap:32px}
-.logo{font-family:var(--fm);font-size:1.1rem;font-weight:500;letter-spacing:-.02em;transition:color .3s}
-.logo__lt,.logo__gt{color:var(--ac)}
-.logo:hover{color:var(--ac)}
+.nav__wrap{max-width:1200px;margin:0 auto;height:100%;padding:0 clamp(20px,5vw,48px);display:flex;align-items:center;gap:12px}
+.logo{position:relative;display:inline-flex;align-items:center;flex-shrink:0;white-space:nowrap;line-height:1;padding:.42em .62em;
+    font-family:var(--fd);font-weight:700;font-size:clamp(.72rem,12vw - 29px,1.5rem);letter-spacing:-.035em;color:#fff}
+[data-theme="light"] .logo{color:var(--tx)}
+/* narożniki jak .stack__bk w kafelkach Tech Stack */
+.logo__cn{position:absolute;width:.5em;height:.5em;border:0 solid;pointer-events:none;transition:transform .45s var(--ease)}
+.logo__cn--tl{top:0;left:0;border-top-width:max(1.5px,.085em);border-left-width:max(1.5px,.085em);border-color:var(--ac)}
+.logo__cn--br{bottom:0;right:0;border-bottom-width:max(1.5px,.085em);border-right-width:max(1.5px,.085em);border-color:var(--ac2)}
+.logo:hover .logo__cn--tl{transform:translate(-.16em,-.16em)}
+.logo:hover .logo__cn--br{transform:translate(.16em,.16em)}
+@media(max-width:359px){.nav__wrap{gap:8px}}
 .nav__links{display:none;gap:32px;margin-left:auto}
 .nav__link{font-family:var(--fm);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--tx2);position:relative;transition:color .3s}
 .nav__link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--ac);transition:width .35s var(--ease)}
@@ -100,7 +107,7 @@ ul{list-style:none}
 .nav__link:hover::after{width:100%}
 .nav__cta{display:none;font-family:var(--fm);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;padding:10px 24px;border:1px solid var(--brd);border-radius:100px;color:var(--tx2);transition:all .3s var(--ease);white-space:nowrap}
 .nav__cta:hover{border-color:var(--ac);color:var(--ac);background:rgba(255,51,85,.06)}
-.burger{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:4px;margin-left:8px}
+.burger{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
 .burger span{display:block;width:22px;height:2px;background:var(--tx);border-radius:2px;transition:transform .3s var(--ease),opacity .3s}
 .burger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .burger.active span:nth-child(2){opacity:0}
@@ -305,6 +312,7 @@ ul{list-style:none}
 .about__cw-code code{white-space:pre}
 .about__visual{display:none}
 @media(min-width:1025px){
+    .nav__wrap,.nav__links{gap:32px}
     .about__visual{display:block}
 }
 
@@ -617,8 +625,9 @@ html.is-switching *::after{
 /* ── 769px+ ── */
 @media(min-width:769px){
     :root{--nh:72px}
+    .nav__wrap{gap:20px}
     .sec{padding:clamp(100px,14vw,180px) 0}
-    .nav__links{display:flex}
+    .nav__links{display:flex;gap:20px}
     .nav__cta{display:inline-flex}
     .burger{display:none}
     .theme-toggle{margin-left:8px}
