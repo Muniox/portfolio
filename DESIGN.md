@@ -22,10 +22,10 @@ colors:
   blanc-hairline-strong: "#c8c3ba"
   blanc-ink: "#181614"
   blanc-ash: "#56524d"
-  blanc-faint: "#9c9590"
+  blanc-faint: "#6f6963"
   blanc-red: "#d4193a"
   blanc-violet: "#5b3fd4"
-  blanc-mint: "#008a6e"
+  blanc-mint: "#007a61"
   syntax-keyword: "#ff6b8a"
   syntax-property: "#7c9cff"
   syntax-string: "#98d964"
@@ -127,9 +127,12 @@ components:
     rounded: "{rounded.xl}"
     size: "56px"
   social-button:
-    textColor: "{colors.faint-slate}"
-    rounded: "{rounded.md}"
-    size: "42px"
+    backgroundColor: "{colors.midnight-ink}"
+    textColor: "{colors.ash}"
+    typography: "{typography.label}"
+    rounded: "{rounded.pill}"
+    padding: "0 20px 0 16px"
+    height: "44px"
 ---
 
 # Design System: Paweł Bartoszewski — Portfolio
@@ -247,13 +250,13 @@ Tactile pills that lift.
 Mono uppercase label in Build Mint with a pulsing 7px dot, mint border at 20% and fill at 4%. Used for availability.
 
 ### Navigation
-Fixed 64/72px bar, transparent at the top, frosted (`blur(18px) saturate(180%)`, 85% ink) with a bottom hairline once scrolled. Wordmark logo "PBartoszewski" in Bricolage 700 with red top-left and violet bottom-right corner brackets that spread on hover. Links are Fira Code uppercase in Ash with a 2px red underline that grows from the left. PL/EN segmented switch with a sliding thumb, and a sun/moon theme toggle whose red thumb slides. Below 769px a burger opens a full-screen blurred overlay with large Bricolage links.
+Fixed 64/72px bar, transparent at the top, frosted (`blur(18px) saturate(180%)`, 85% ink) with a bottom hairline once scrolled. Wordmark logo "PBartoszewski" in Bricolage 700 with red top-left and violet bottom-right corner brackets that spread on hover. Links are Fira Code uppercase in Ash with a 2px red underline that grows from the left; the link for the section in view stays Bone with the full underline (`.is-active`, `aria-current="location"`), in the mobile overlay too. PL/EN segmented switch with a sliding thumb, and a sun/moon theme toggle whose red thumb slides. Below 769px a burger opens a full-screen blurred overlay with large Bricolage links, built from the page's own nav (so each language keeps its labels) and closed with Escape.
 
 ### Code Window (signature)
 The system's recurring artifact: a 14px-radius card with a traffic-light title bar, a file name in Faint Slate on the right, and syntax-colored Fira Code. In the hero it is glass and floating; in About it is solid Card Ink and sticky beside the text.
 
 ### Tech Stack Architecture (signature)
-The stack is drawn as the path a request takes. Each layer is a 14px glass card (72% Card Ink, `blur(12px)`) with a 13% radial wash of its accent (`--cat`) from the top-left. Its header has the outlined number, the `<tag/>` label and a meta line. Tiles are horizontal (logo, then mono name over a "kind" label) on Midnight Ink with 4px corners; the backend's .NET and EF Core tiles use a Bricolage name. Between layers, two dashed channels carry animated packets: red going down (request), violet going up (response), explained by a legend above the diagram. Transport technologies (REST API, SignalR) sit on the wire as pill chips. The DevOps rail uses the same card as the layers, tinted with its mint accent. On hover a tile's background lifts to Card Ink, a radial glow in the technology's own color (`--col`) fades in, corner brackets slide into place, a 2px bottom bar wipes in, and the logo returns to full color. Animation stops under `prefers-reduced-motion`. In Code Blanc the tiles and chips are white and the layer shadows are warm and soft.
+The stack is drawn as the path a request takes. Each layer is a 14px glass card (72% Card Ink, `blur(12px)`) with a 13% radial wash of its accent (`--cat`) from the top-left. Its header has the outlined number, the `<tag/>` label and a meta line. Tiles are horizontal (logo, then mono name over a "kind" label); the frontend layer's five tiles run 2+2+1 below 769px and 3+2 above on Midnight Ink with 4px corners; the backend's .NET and EF Core tiles use a Bricolage name. Between layers, two dashed channels carry animated packets: red going down (request), violet going up (response), labelled directly on the first wire next to each channel (dot on the cable side). Transport technologies (REST API, SignalR) sit on the wire as pill chips. The DevOps rail uses the same card as the layers, tinted with its mint accent. On hover a tile's background lifts to Card Ink, a radial glow in the technology's own color (`--col`) fades in, corner brackets slide into place, a 2px bottom bar wipes in, and the logo returns to full color. Animation stops under `prefers-reduced-motion`. In Code Blanc the tiles and chips are white and the layer shadows are warm and soft.
 
 ### Cards / Containers (Project Card)
 - **Corner Style:** 16px.
@@ -265,7 +268,7 @@ The stack is drawn as the path a request takes. Each layer is a 14px glass card 
 56px glass squares (16px radius) holding a single tech logo, each with a border tinted to that brand, bobbing on independent sine loops in the hero.
 
 ### Contact
-Headline with a gradient final word, mono contact rows with red icons, 42px social tiles (12px radius) that lift and turn red on hover. From 769px a large dotted globe map sits behind the section with a pulsing red pin on Mława.
+Headline with a gradient final word, mono contact rows with red icons; the e-mail row carries a small ghost-pill "copy" button that confirms in Build Mint with a check icon and a polite status message. LinkedIn and GitHub are labelled 44px ghost pills (icon + mono uppercase name) that lift and turn red on hover. From 769px a large dotted globe map sits behind the section with a pulsing red pin on Mława.
 
 ## Do's and Don'ts
 

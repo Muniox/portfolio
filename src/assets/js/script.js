@@ -86,12 +86,40 @@
         },
     });
 
+    /* ── ACTIVE SECTION IN NAV ─────────────── */
+    const navLinks = document.querySelectorAll('#navLinks .nav__link');
+    let activeId = null;
+
+    function setActive(id) {
+        activeId = id;
+        document.querySelectorAll('.nav__link, .mob-overlay__links a').forEach(a => {
+            const on = a.getAttribute('href') === id;
+            a.classList.toggle('is-active', on);
+            if (on) a.setAttribute('aria-current', 'location');
+            else a.removeAttribute('aria-current');
+        });
+    }
+
+    navLinks.forEach(link => {
+        const id = link.getAttribute('href');
+        const section = document.querySelector(id);
+        if (!section) return;
+        ScrollTrigger.create({
+            trigger: section, start: 'top center', end: 'bottom center',
+            onToggle: self => {
+                if (self.isActive) setActive(id);
+                else if (activeId === id) setActive(null);
+            },
+        });
+    });
+
     /* ── BURGER / MOBILE NAV ───────────────── */
     const burger = document.getElementById('burger');
     let overlay = null;
 
     function closeMob() {
         burger.classList.remove('active');
+        burger.setAttribute('aria-expanded', 'false');
         if (overlay) overlay.classList.remove('active');
         document.body.style.overflow = '';
     }
@@ -102,21 +130,31 @@
             overlay.className = 'mob-overlay';
             const ul = document.createElement('ul');
             ul.className = 'mob-overlay__links';
-            [['#about','O mnie'],['#skills','Stack'],['#projects','Projekty'],['#contact','Kontakt']].forEach(([href, text]) => {
+            // Labels come from the page's own nav, so /en/ gets English links
+            navLinks.forEach(link => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
-                a.href = href;
-                a.textContent = text;
+                a.href = link.getAttribute('href');
+                a.textContent = link.textContent;
                 a.addEventListener('click', closeMob);
                 li.appendChild(a);
                 ul.appendChild(li);
             });
             overlay.appendChild(ul);
             document.body.appendChild(overlay);
+            setActive(activeId);
         }
         const open = burger.classList.toggle('active');
+        burger.setAttribute('aria-expanded', String(open));
         overlay.classList.toggle('active', open);
         document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && burger.classList.contains('active')) {
+            closeMob();
+            burger.focus();
+        }
     });
 
     /* ── SMOOTH SCROLL ─────────────────────── */
@@ -192,6 +230,48 @@
             delay: inHero ? 1.2 : 0,
             ...(!inHero && { scrollTrigger: { trigger: el, start: 'top 85%', once: true } }),
             onUpdate: () => { el.textContent = Math.floor(obj.val); },
+        });
+    });
+
+    /* ── COPY E-MAIL ───────────────────────── */
+    function copyFallback(text) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        let ok = false;
+        try { ok = document.execCommand('copy'); } catch { ok = false; }
+        ta.remove();
+        return ok;
+    }
+
+    document.querySelectorAll('[data-copy]').forEach(btn => {
+        const label = btn.querySelector('.contact__copy-lb');
+        const status = document.getElementById('copyStatus');
+        const idle = label.textContent;
+        let resetTimer;
+
+        btn.addEventListener('click', async () => {
+            let ok;
+            try {
+                await navigator.clipboard.writeText(btn.dataset.copy);
+                ok = true;
+            } catch {
+                ok = copyFallback(btn.dataset.copy);
+            }
+            btn.classList.toggle('is-done', ok);
+            label.textContent = ok ? btn.dataset.done : btn.dataset.fail;
+            if (status) status.textContent = ok ? btn.dataset.status : btn.dataset.fail;
+
+            clearTimeout(resetTimer);
+            resetTimer = setTimeout(() => {
+                btn.classList.remove('is-done');
+                label.textContent = idle;
+                if (status) status.textContent = '';
+            }, 2400);
         });
     });
 
