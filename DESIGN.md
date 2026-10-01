@@ -10,7 +10,7 @@ colors:
   hairline-strong: "#28284a"
   bone: "#eceae4"
   ash: "#8b8ba0"
-  faint-slate: "#50506a"
+  faint-slate: "#80809a"
   signal-red: "#ff3355"
   signal-red-hover: "#ff4d6a"
   electric-violet: "#7c5cfc"
