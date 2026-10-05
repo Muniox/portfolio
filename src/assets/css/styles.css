@@ -236,6 +236,11 @@ ul{list-style:none}
 .fcard__title{margin-left:auto;font-family:var(--fm);font-size:.62rem;color:var(--tx3);letter-spacing:.02em}
 .fcard__code{padding:16px 18px;font-family:var(--fm);font-size:.68rem;line-height:1.75;color:var(--tx2);white-space:pre;overflow:hidden}
 .fcard__code--term{font-size:.65rem;line-height:1.7}
+/* Numery linii w głównej karcie — 13 linii, metryka dziedziczona z .fcard__code (jak .about__cw-ln) */
+.fcard--main .fcard__code{position:relative;padding-left:50px}
+.fcard--main .fcard__code::before{content:'1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9\A 10\A 11\A 12\A 13';white-space:pre;
+    position:absolute;top:0;bottom:0;left:0;width:36px;padding:16px 9px 0 0;text-align:right;user-select:none;
+    color:var(--tx3);opacity:.55;border-right:1px solid var(--brd)}
 
 /* Syntax tokens */
 .kw{color:#ff6b8a}
@@ -299,20 +304,26 @@ ul{list-style:none}
 
 /* ── ABOUT ───────────────────────────────── */
 .about__row{display:grid;grid-template-columns:1fr;gap:40px;align-items:start}
-.about__txt .sec__h2{margin-bottom:24px}
-.about__p{color:var(--tx2);font-size:.92rem;margin-bottom:16px;max-width:520px}
+.about__txt .sec__h2{margin-bottom:24px;text-wrap:balance}
+.about__p{color:var(--tx2);font-size:.92rem;margin-bottom:16px;max-width:520px;text-wrap:pretty}
 .about__p strong{color:var(--tx);font-weight:600}
 
 /* Code window */
-.about__photo{width:110px;height:110px;border-radius:50%;object-fit:cover;float:left;
-    margin:6px 20px 12px 0;shape-outside:circle(50%);
-    border:3px solid var(--brd-h);
+.about__photo{width:104px;height:104px;border-radius:50%;object-fit:cover;float:left;
+    margin:8px 24px 12px 0;shape-outside:circle(calc(50% + 6px));
+    outline:1px solid var(--brd-h);outline-offset:4px;
     box-shadow:0 8px 24px rgba(0,0,0,.15)}
 .about__codewin{background:var(--card);border:1px solid var(--brd);border-radius:14px;overflow:hidden}
 .about__cw-bar{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid var(--brd);background:var(--cw-bar-bg)}
 .about__cw-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-.about__cw-file{margin-left:auto;font-family:var(--fm);font-size:.62rem;color:var(--tx3)}
-.about__cw-code{padding:20px;font-family:var(--fm);font-size:.72rem;line-height:1.8;color:var(--tx2);overflow-x:auto}
+.about__cw-file{margin-left:auto;display:flex;align-items:center;gap:8px;font-family:var(--fm);font-size:.62rem;color:var(--tx3)}
+.about__cw-file::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--tx3);opacity:.6}
+/* Numery linii — 21 linii kodu, ta sama metryka co .about__cw-code */
+.about__cw-body{display:flex;align-items:flex-start}
+.about__cw-ln{flex-shrink:0;width:40px;padding:20px 10px 20px 0;text-align:right;user-select:none;
+    font-family:var(--fm);font-size:.72rem;line-height:1.8;color:var(--tx3);opacity:.55;border-right:1px solid var(--brd)}
+.about__cw-ln::before{content:'1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9\A 10\A 11\A 12\A 13\A 14\A 15\A 16\A 17\A 18\A 19\A 20\A 21';white-space:pre}
+.about__cw-code{flex:1;min-width:0;padding:20px 20px 20px 16px;font-family:var(--fm);font-size:.72rem;line-height:1.8;color:var(--tx2);overflow-x:auto}
 .about__cw-code code{white-space:pre}
 .about__visual{display:none}
 @media(min-width:1025px){
