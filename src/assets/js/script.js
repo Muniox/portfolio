@@ -200,15 +200,19 @@
         { y: 0, opacity: 1, delay: 0.4, duration: 0.6, stagger: 0.08, ease: 'power2.out' }
     );
 
-    heroCards.forEach((el, i) => {
-        gsap.to(el, {
-            y: -(14 + Math.random() * 8),
-            duration: 1.8 + Math.random(),
-            ease: 'sine.inOut',
-            yoyo: true,
-            repeat: -1,
-            delay: 1 + i * 0.15,
-        });
+    const floats = heroCards.map((el, i) => gsap.to(el, {
+        y: -(14 + Math.random() * 8),
+        duration: 1.8 + Math.random(),
+        ease: 'sine.inOut',
+        yoyo: true,
+        repeat: -1,
+        delay: 1 + i * 0.15,
+    }));
+
+    // Floating glass cards re-blur their backdrop every frame; stop them once the hero is out of view
+    ScrollTrigger.create({
+        trigger: '.hero', start: 'top bottom', end: 'bottom top',
+        onToggle: self => floats.forEach(t => (self.isActive ? t.resume() : t.pause())),
     });
 
     /* ── REVEAL ON SCROLL ──────────────────── */
