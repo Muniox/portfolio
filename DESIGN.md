@@ -35,10 +35,21 @@ colors:
 typography:
   display:
     fontFamily: "Bricolage Grotesque, sans-serif"
-    fontSize: "clamp(2rem, 5.5vw, 4.5rem)"
+    fontSize: "clamp(2.6rem, 5.5vw, 4.5rem)"
     fontWeight: 800
     lineHeight: 0.92
-    letterSpacing: "-0.045em"
+    letterSpacing: "-0.04em"
+  display-compact:
+    fontFamily: "Bricolage Grotesque, sans-serif"
+    fontSize: "clamp(2rem, 10.5vw, 3.25rem)"
+    fontWeight: 800
+    lineHeight: 0.92
+    letterSpacing: "-0.04em"
+  numeric:
+    fontFamily: "Bricolage Grotesque, sans-serif"
+    fontSize: "2rem"
+    fontWeight: 800
+    lineHeight: 1
   headline:
     fontFamily: "Bricolage Grotesque, sans-serif"
     fontSize: "clamp(1.5rem, 3vw, 2.3rem)"
@@ -52,19 +63,39 @@ typography:
     letterSpacing: "-0.01em"
   body:
     fontFamily: "Plus Jakarta Sans, sans-serif"
-    fontSize: "0.92rem"
+    fontSize: "1rem"
+    fontWeight: 400
+    lineHeight: 1.7
+  body-sm:
+    fontFamily: "Plus Jakarta Sans, sans-serif"
+    fontSize: "0.875rem"
     fontWeight: 400
     lineHeight: 1.65
+  action:
+    fontFamily: "Fira Code, JetBrains Mono, monospace"
+    fontSize: "0.8125rem"
+    fontWeight: 500
+    letterSpacing: "0.06em"
   label:
     fontFamily: "Fira Code, JetBrains Mono, monospace"
-    fontSize: "0.72rem"
+    fontSize: "0.75rem"
     fontWeight: 500
     letterSpacing: "0.1em"
+  micro:
+    fontFamily: "Fira Code, JetBrains Mono, monospace"
+    fontSize: "0.6875rem"
+    fontWeight: 400
+    letterSpacing: "0.14em"
   code:
     fontFamily: "Fira Code, JetBrains Mono, monospace"
-    fontSize: "0.72rem"
+    fontSize: "0.75rem"
     fontWeight: 400
     lineHeight: 1.8
+  code-sm:
+    fontFamily: "Fira Code, JetBrains Mono, monospace"
+    fontSize: "0.6875rem"
+    fontWeight: 400
+    lineHeight: 1.75
 rounded:
   hairline: "2px"
   sm: "8px"
@@ -198,13 +229,18 @@ Code windows use a fixed six-color syntax palette (`syntax-*`): keyword pink, pr
 **Character:** A quirky, tightly tracked grotesque for headlines against a friendly geometric sans for reading, with Fira Code doing all the small, authoritative labelling, so the page reads like a well-typeset IDE.
 
 ### Hierarchy
-- **Display** (800, `clamp(2rem,5.5vw,4.5rem)` from 769px, `clamp(1.6rem,8vw,3rem)` below; line-height 0.92; −0.045em): the stacked name in the hero only. Second line carries the gradient.
+- **Display** (800, `clamp(2.6rem,5.5vw,4.5rem)` from 769px, `clamp(2rem,10.5vw,3.25rem)` below; line-height 0.92; −0.04em): the stacked name in the hero only. Second line carries the gradient.
 - **Headline** (700, `clamp(1.5rem,3vw,2.3rem)`, 1.2, −0.02em): section headings, with one gradient keyword.
 - **Title** (700, 1.2rem, −0.01em): project card titles.
-- **Body** (400, 0.92rem, 1.65–1.7): paragraphs in Ash with Bone `strong` emphasis; max width 420–520px.
-- **Label** (Fira Code 500, 0.72rem, 0.06–0.1em, uppercase): nav links, buttons, section tags, pills, tags. Smallest meta labels drop to 0.56–0.62rem with 0.18–0.22em tracking.
-- **Code** (Fira Code 400, 0.68–0.72rem, 1.75–1.8): code windows and terminal.
-- **Numeric** (Bricolage 800, 2rem, tabular-nums): hero counters; outlined Bricolage 700 at `clamp(3.4rem,7vw,5.6rem)` with a 1.5px text-stroke for stack category numbers.
+- **Body** (400, 1rem, 1.7): hero, about and contact paragraphs in Ash with Bone `strong` emphasis; max width 28–34rem.
+- **Body Small** (400, 0.875rem, 1.65): project descriptions, footer, cookie notice.
+- **Action** (Fira Code 500, 0.8125rem, 0.06em, uppercase for buttons): buttons, tech names in tiles, contact rows.
+- **Label** (Fira Code 500, 0.75rem, 0.1em, uppercase): nav links, section tags, pills, project links and numbers, social and copy pills, transport chips.
+- **Micro** (Fira Code, 0.6875rem / 11px, 0.14em, uppercase): tile "kind" lines, layer meta, wire labels, project tags, counter labels, window file names. 11px is the floor; nothing functional goes smaller.
+- **Code** (Fira Code 400, 0.75rem, 1.8): the About code window and its line numbers. **Code Small** (0.6875rem, 1.75): the decorative hero code and terminal cards.
+- **Numeric** (Bricolage 800, 2rem, tabular-nums): hero counters; outlined Bricolage 700 at 2.6rem (−0.04em) with a 1.5px text-stroke for stack category numbers.
+
+All sizes live as `--fs-*` custom properties (with `--tr-micro/label/action` tracking) in `:root`; components reference the role, never a raw rem value.
 
 ### Named Rules
 **The Mono Authority Rule.** Any label, tag, number prefix, button or meta line under ~0.8rem is Fira Code, usually uppercase and tracked. Plus Jakarta Sans is for sentences only.
@@ -275,7 +311,7 @@ Headline with a gradient final word, mono contact rows with red icons; the e-mai
 ### Do:
 - **Do** drive every color through the `:root` / `[data-theme="light"]` custom properties so Code Noir and Code Blanc stay in lockstep.
 - **Do** use `cubic-bezier(.19,1,.22,1)` for interaction transitions (0.3–0.55s) and GSAP `power2.out` for reveals.
-- **Do** keep small labels in Fira Code, uppercase, tracked 0.06–0.22em.
+- **Do** keep small labels in Fira Code, uppercase, tracked 0.06–0.14em, never below 11px.
 - **Do** give each section heading at most one gradient word.
 - **Do** put glass and floating cards over a textured backdrop (grid, orbs, noise).
 - **Do** give tech tiles their own brand color via `--col` and categories their accent via `--cat`.
