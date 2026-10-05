@@ -567,13 +567,25 @@ a.contact__d:hover{color:var(--ac)}
 /* Map globe */
 .contact__map{position:absolute;inset:0;z-index:1;display:none;align-items:center;justify-content:center;pointer-events:none;overflow:hidden}
 .contact__map-wrap{position:relative;width:1650px;aspect-ratio:1/1;flex-shrink:0;transform:translateX(3%) translateY(25%)}
-.contact__map-img{width:100%;height:100%;opacity:.6}
-.contact__pin{position:absolute;width:19px;height:19px;border-radius:50%;background:#ff3355;
+.contact__land,.contact__wave{position:absolute;inset:0;
+    -webkit-mask:url(../img/map.svg) center/100% 100% no-repeat;mask:url(../img/map.svg) center/100% 100% no-repeat}
+.contact__land{background:color-mix(in srgb,var(--tx3) 45%,transparent);opacity:.7}
+/* Signal wave: a ring leaves the pin and lights the land dots as it passes */
+@property --wave-r{syntax:'<length>';inherits:false;initial-value:0px}
+.contact__wave{
+    background:radial-gradient(circle at 52.93% 22.55%,
+        transparent calc(var(--wave-r) - 220px),
+        color-mix(in srgb,var(--ac2) 70%,transparent) calc(var(--wave-r) - 60px),
+        var(--ac) var(--wave-r),
+        transparent calc(var(--wave-r) + 6px));
+    animation:map-wave 6s var(--ease) infinite}
+@keyframes map-wave{0%{--wave-r:0px;opacity:1}75%{opacity:.9}100%{--wave-r:1100px;opacity:0}}
+.contact__pin{position:absolute;width:19px;height:19px;border-radius:50%;background:var(--ac);
     top:22.55%;left:52.93%;transform:translate(-50%,-50%);
-    box-shadow:0 0 13px 5px rgba(255,51,85,.5)}
-.contact__pin::before,.contact__pin::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:1.6px solid #ff3355;animation:pin-pulse 2.5s infinite}
-.contact__pin::after{animation-delay:.5s}
-@keyframes pin-pulse{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(3);opacity:0}}
+    box-shadow:0 0 13px 5px color-mix(in srgb,var(--ac) 50%,transparent)}
+@media(prefers-reduced-motion:reduce){
+    .contact__wave{animation:none;background:radial-gradient(circle 320px at 52.93% 22.55%,color-mix(in srgb,var(--ac) 70%,transparent),transparent)}
+}
 
 /* ── FOOTER ──────────────────────────────── */
 .footer{border-top:1px solid var(--brd);padding:28px 0}
@@ -643,8 +655,8 @@ html.is-switching *::after{
 [data-theme="light"] .pj:hover{box-shadow:0 28px 72px rgba(24,22,20,.12)}
 [data-theme="light"] .pj__mockup{box-shadow:0 12px 40px rgba(24,22,20,.12)}
 
-/* Map globe — warm & subtle for light bg */
-[data-theme="light"] .contact__map-img{opacity:.18;filter:brightness(.4) sepia(.35) saturate(.5)}
+/* Map globe — opacity tuned to match the dark theme's dot contrast (~1.48:1) */
+[data-theme="light"] .contact__land{opacity:.67}
 
 /* Tech stack — architecture on paper for light mode */
 [data-theme="light"] .stack__num{-webkit-text-stroke-width:2px}

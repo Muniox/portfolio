@@ -304,7 +304,7 @@ The stack is drawn as the path a request takes. Each layer is a 14px glass card 
 56px glass squares (16px radius) holding a single tech logo, each with a border tinted to that brand, bobbing on independent sine loops in the hero.
 
 ### Contact
-Headline with a gradient final word, mono contact rows with red icons; the e-mail row carries a small ghost-pill "copy" button that confirms in Build Mint with a check icon and a polite status message. LinkedIn and GitHub are labelled 44px ghost pills (icon + mono uppercase name) that lift and turn red on hover. From 769px a large dotted globe map sits behind the section with a pulsing red pin on Mława.
+Headline with a gradient final word, mono contact rows with red icons; the e-mail row carries a small ghost-pill "copy" button that confirms in Build Mint with a check icon and a polite status message. LinkedIn and GitHub are labelled 44px ghost pills (icon + mono uppercase name) that lift and turn red on hover. From 769px a large dotted globe sits behind the section as a horizon: the land dots are a CSS mask over `map.svg`, tinted from tokens (Faint Slate at low opacity), with a glowing red pin on Mława. Every 6s a signal ring leaves the pin and lights the land red→violet as it passes (expo-out); under `prefers-reduced-motion` it becomes a static red bloom around the pin.
 
 ## Do's and Don'ts
 
